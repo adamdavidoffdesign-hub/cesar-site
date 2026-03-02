@@ -864,6 +864,8 @@
     .systems__contents {
       grid-template-columns: 1fr;
       row-gap: 40px;
+      border-top: var(--border-hairline) solid var(--c-black);
+      padding-top: var(--stack-xs);
     }
 
     .systems__inner.reveal,
@@ -880,6 +882,10 @@
       position: static;
     }
 
+    .systems__bar::before {
+      content: none;
+    }
+
     .systems__bar.is-condensed::before {
       width: 100%;
     }
@@ -892,7 +898,7 @@
 
     .system__photos--3 {
       display: flex;
-      gap: var(--space-sm);
+      gap: 8px;
       overflow-x: auto;
       overflow-y: hidden;
       height: auto;
