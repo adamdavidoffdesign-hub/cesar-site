@@ -107,6 +107,31 @@ function initSystems() {
   return Promise.resolve();
 }
 
+function initCollectionPage() {
+  var heroTitle = document.querySelector('.collection-hero__title');
+  var contentTitle = document.querySelector('.collection-content__title');
+  var contentText = document.querySelector('.collection-content__text');
+  if (!heroTitle || !contentTitle || !contentText) return;
+
+  var pathname = window.location.pathname || '';
+  var slug = pathname.split('/').pop().replace('.html', '');
+  var collection = SYSTEMS_DATA.find(function (item) {
+    return item.link.split('/').pop().replace('.html', '') === slug;
+  });
+
+  if (!collection) return;
+
+  heroTitle.textContent = collection.name;
+  contentTitle.textContent = collection.designer;
+  contentText.innerHTML = '';
+
+  collection.desc.forEach(function (paragraph) {
+    var p = document.createElement('p');
+    p.textContent = paragraph;
+    contentText.appendChild(p);
+  });
+}
+
 function initSystemsBar() {
   var bar = document.querySelector('.systems__bar');
   if (!bar) return;
@@ -136,6 +161,13 @@ function initHeader() {
   if (!header) return;
   var heroSection = document.getElementById('hero');
   var mobileMenu = document.getElementById('mobile-menu');
+  var inCollections = (window.location.pathname || '').indexOf('/collections/') !== -1;
+
+  header.querySelectorAll('[data-site-path]').forEach(function (link) {
+    var sitePath = link.getAttribute('data-site-path');
+    if (!sitePath) return;
+    link.setAttribute('href', (inCollections ? '../' : '') + sitePath);
+  });
 
   // ===== header state + hide on scroll down / show on scroll up =====
   var lastScrollY = window.scrollY;
@@ -491,6 +523,7 @@ function initHeroWordReveal() {
 initHeroWordReveal();
 initAboutGallery();
 initSystems(); /* карточки систем — сразу, не ждём загрузки header/footer */
+initCollectionPage();
 initSystemsBar();
 loadPartials().then(function () {
   initRevealAnimations();
