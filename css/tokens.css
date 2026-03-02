@@ -116,7 +116,7 @@
 
   /* grid tokens */
   --gallery-thumb-columns: repeat(6, 95px);
-  --systems-condensed-width: calc(33.3333% - 8px);
+  --systems-condensed-width: calc(26.6667% - 8px);
   --grid-gap-sm: 16px;
   --grid-gap-md: 32px;
   --grid-gap-lg: 64px;
