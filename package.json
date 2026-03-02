@@ -1,0 +1,7 @@
+{
+  "name": "cesar-site",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/site-smoke.test.js"
+  }
+}

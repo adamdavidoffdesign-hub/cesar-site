@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(brew install poppler)",
+      "Bash(python3 -c \"import fitz; print\\(''pymupdf ok''\\)\")",
+      "Bash(python3 -:*)",
+      "Bash(curl -si http://127.0.0.1:8080/partials/footer.html)",
+      "Bash(grep -n 'main.js' /Users/khanboltaev/Documents/cesar-site/collections/*.html)",
+      "Bash(python3 -c \"import fitz; print\\(fitz.__version__\\)\")",
+      "Bash(python3:*)",
+      "mcp__claude_ai_Figma__get_design_context",
+      "Bash(grep -h \"<title>\\\\|<h1\\\\|collection-hero__title\\\\|data-name\" /Users/khanboltaev/Documents/cesar-site/collections/collection-*.html)",
+      "WebFetch(domain:www.simonholm.studio)",
+      "WebFetch(domain:www.studiodado.com)",
+      "WebFetch(domain:www.ogakidigital.com)",
+      "WebFetch(domain:www.melvinwinkeler.com)",
+      "WebFetch(domain:flowers-sim.ru)",
+      "mcp__claude_ai_Figma__get_screenshot",
+      "WebFetch(domain:cesar-a6b773.webflow.io)",
+      "WebFetch(domain:uploads-ssl.webflow.com)",
+      "WebFetch(domain:cdn.prod.website-files.com)",
+      "WebFetch(domain:assets-global.website-files.com)",
+      "WebFetch(domain:global-uploads.webflow.com)",
+      "Bash(curl -s \"https://cesar-a6b773.webflow.io\")",
+      "Bash(curl -s \"https://cdn.prod.website-files.com/6994d04d130e60983bcb04e3/css/cesar-a6b773.webflow.shared.63c38fed9.css\")",
+      "Bash(grep -l \"components.css?v=24\" /Users/khanboltaev/Documents/cesar-site/*.html /Users/khanboltaev/Documents/cesar-site/collections/*.html)",
+      "Bash(grep -rn \"components.css?v=\" /Users/khanboltaev/Documents/cesar-site/*.html /Users/khanboltaev/Documents/cesar-site/partials/)",
+      "WebFetch(domain:starter-template-2023.webflow.io)",
+      "WebFetch(domain:bricks-styleguide.webflow.io)",
+      "Bash(grep -l \"layout.css\" /Users/khanboltaev/Documents/cesar-site/*.html /Users/khanboltaev/Documents/cesar-site/collections/*.html)"
+    ]
+  }
+}

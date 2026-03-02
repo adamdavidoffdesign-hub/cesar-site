@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cesar Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css?v=4" />
+  <link rel="stylesheet" href="css/base.css?v=2" />
+  <link rel="stylesheet" href="css/layout.css?v=3" />
+  <link rel="stylesheet" href="css/components.css?v=42" />
+  <link rel="stylesheet" href="css/animations.css?v=10" />
+</head>
+
+<body class="page-home">
+  <!-- глобальный хедер (подгружается из partials) -->
+  <header id="header" class="header"></header>
+
+  <main>
+    <!-- 1) hero -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">КУХНИ ДЛЯ<br />ОСМЫСЛЕННОЙ ЖИЗНИ</h1>
+          <p class="hero__subtitle">Архитектурные системы,<br />созданные для пространства, ритма и комфорта.</p>
+          <a href="#systems" class="hero__link">Смотреть системы <span class="link-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) about -->
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="container about__container">
+        <div class="about__main">
+          <h2 class="about__brand" id="about-title">CESAR Студия</h2>
+
+          <div class="about__content">
+            <h3 class="about__headline">Официальный дилер фабрики<br />Cesar в России.</h3>
+
+            <div class="about__text">
+              <p>Мы работаем напрямую с производством в Италии и реализуем кухни как архитектурные системы, адаптированные под конкретное пространство.</p>
+              <p>Кухни Cesar производятся в Италии с контролем качества на каждом этапе.</p>
+            </div>
+
+            <a class="about__link" href="about.html">Подробнее <span class="link-arrow">→</span></a>
+          </div>
+        </div>
+
+        <div class="about__gallery" aria-label="Галерея">
+          <div class="about__thumbs" role="tablist" aria-label="Превью">
+            <button class="about__thumb about__thumb--active" type="button" aria-label="Фото 1" aria-pressed="true" data-large="images/about/carusel_1.png">
+              <img src="images/about/carusel_1.png" alt="" />
+            </button>
+            <button class="about__thumb" type="button" aria-label="Фото 2" aria-pressed="false" data-large="images/about/carusel_2.png">
+              <img src="images/about/carusel_2.png" alt="" />
+            </button>
+            <button class="about__thumb" type="button" aria-label="Фото 3" aria-pressed="false" data-large="images/about/carusel_3.png">
+              <img src="images/about/carusel_3.png" alt="" />
+            </button>
+            <button class="about__thumb" type="button" aria-label="Фото 4" aria-pressed="false" data-large="images/about/carusel_4.png">
+              <img src="images/about/carusel_4.png" alt="" />
+            </button>
+            <button class="about__thumb" type="button" aria-label="Фото 5" aria-pressed="false" data-large="images/about/carusel_5.png">
+              <img src="images/about/carusel_5.png" alt="" />
+            </button>
+            <button class="about__thumb" type="button" aria-label="Фото 6" aria-pressed="false" data-large="images/about/carusel_6.png">
+              <img src="images/about/carusel_6.png" alt="" />
+            </button>
+          </div>
+
+          <div class="about__preview" aria-label="Выбранное фото">
+            <img src="images/about/carusel_1.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) systems -->
+    <section id="systems" class="systems" aria-labelledby="systems-title">
+      <div class="container systems__inner">
+
+        <div class="systems__contents">
+          <div class="systems__bar">
+            <span class="section-label" id="systems-title">Системы кухонь Cesar</span>
+          </div>
+
+          <div class="systems__list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- шаблон карточки системы (используется JS, не отображается) -->
+    <template id="system-card-template">
+      <div class="system">
+        <div class="system__meta">
+          <p class="system__name"></p>
+          <p class="system__designer"></p>
+        </div>
+        <div class="system__desc"></div>
+        <div class="system__photos system__photos--3"></div>
+        <a class="system__link" href="#">Подробнее <span class="link-arrow">→</span></a>
+      </div>
+    </template>
+
+    <!-- 4) services -->
+    <section id="services" class="service" aria-labelledby="services-title">
+      <div class="container service__inner">
+        <div class="service__content">
+          <div class="service__header">
+            <span class="section-label" id="services-title">Сервис</span>
+            <p class="service__subtitle">Полное сопровождение проекта от идеи до установленной кухни.</p>
+          </div>
+
+          <div class="service__grid">
+            <div class="service__item">
+              <p class="service__name">01<br>Проектирование</p>
+              <p class="service__desc">Индивидуальный дизайн-проект с учётом архитектуры пространства, выбранной системы Cesar и сценариев жизни.</p>
+            </div>
+            <div class="service__item">
+              <p class="service__name">02<br>Заказ на фабрике</p>
+              <p class="service__desc">Оформление и контроль заказа напрямую на производстве в Италии с соблюдением стандартов фабрики Cesar.</p>
+            </div>
+            <div class="service__item">
+              <p class="service__name">03<br>Логистика</p>
+              <p class="service__desc">Организация доставки по Москве и регионам России с контролем сроков и условий перевозки.</p>
+            </div>
+            <div class="service__item">
+              <p class="service__name">04<br>Сборка</p>
+              <p class="service__desc">Профессиональная сборка сертифицированными специалистами с точной подгонкой и проверкой результата.</p>
+            </div>
+            <div class="service__item">
+              <p class="service__name">05<br>Контроль качества</p>
+              <p class="service__desc">Контроль на каждом этапе — от проектирования до финальной установки.</p>
+            </div>
+            <div class="service__item">
+              <p class="service__name">06<br>Гарантия и сопровождение</p>
+              <p class="service__desc">Официальная гарантия фабрики Cesar и постгарантийная поддержка студии.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5) contact-cta -->
+        <div class="contact-cta" aria-label="Узнать стоимость проекта">
+          <div class="contact-cta__outer">
+            <div class="contact-cta__inner">
+              <p class="contact-cta__headline">Один проект. Одна команда. Один результат.</p>
+
+              <div class="contact-cta__text">
+                <p>Мы работаем напрямую с фабрикой Cesar в Италии и несем ответственность за результат на каждом этапе проекта.</p>
+              </div>
+
+              <div class="contact-cta__col">
+                <span class="contact-cta__form-label">Узнать стоимость проекта</span>
+                <form class="contact-cta__form" action="#" method="post">
+                  <input type="email" class="contact-cta__input" placeholder="Email" required />
+                  <button type="submit" class="contact-cta__submit">Отправить <span class="link-arrow">→</span></button>
+                </form>
+                <p class="contact-cta__privacy">Отправляя запрос, вы соглашаетесь с политикой конфиденциальности и условиями обработки данных.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="js/main.js?v=16"></script>
+</body>
+</html>
