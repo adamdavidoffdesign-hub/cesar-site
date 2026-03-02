@@ -1,0 +1,15 @@
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-gutter);
+  padding-right: var(--container-gutter);
+  padding-top: 8px;
+  border-top: var(--border-hairline) solid rgba(var(--c-black-rgb), 0.08);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: var(--container-gutter-mobile);
+    padding-right: var(--container-gutter-mobile);
+  }
+}

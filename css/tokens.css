@@ -1,0 +1,185 @@
+:root {
+  /* color tokens */
+  --c-black: #313437;
+  --c-black-rgb: 49, 52, 55;
+  --c-smoke: #d3d8d6;
+  --c-white: #f5f2ef;
+  --c-gray: #999999;
+  --c-overlay-strong: rgba(49, 52, 55, 0.42);
+
+  /* font family tokens */
+  --ff-manrope: "Manrope", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
+  /* font size tokens */
+  --fs-10: 0.625rem;
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-24: 1.5rem;
+
+  /* line height tokens */
+  --lh-120: 1.2;
+  --lh-140: 1.4;
+  --lh-150: 1.5;
+
+  /* letter spacing tokens */
+  --ls-30: 0.3em;
+  --ls-22: 0.22em;
+  --ls-08: 0.08em;
+  --ls-02: 0.02em;
+  --ls-00: 0;
+
+  /* font weight tokens */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* semantic type tokens */
+  --type-display-size: var(--fs-24);
+  --type-display-weight: var(--fw-regular);
+  --type-display-line: var(--lh-120);
+  --type-display-spacing: var(--ls-30);
+
+  --type-title-size: var(--fs-16);
+  --type-title-weight: var(--fw-semibold);
+  --type-title-line: var(--lh-140);
+  --type-title-spacing: var(--ls-08);
+
+  --type-body-size: var(--fs-14);
+  --type-body-weight: var(--fw-medium);
+  --type-body-line: var(--lh-150);
+  --type-body-spacing: var(--ls-00);
+
+  --type-label-size: var(--fs-12);
+  --type-label-weight: var(--fw-semibold);
+  --type-label-line: var(--lh-150);
+  --type-label-spacing: var(--ls-02);
+
+  --type-caption-size: var(--fs-10);
+  --type-caption-weight: var(--fw-semibold);
+  --type-caption-line: var(--lh-150);
+  --type-caption-spacing: var(--ls-02);
+
+  /* spacing tokens */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 120px;
+
+  /* layout tokens */
+  --container-max: 1440px;
+  --container-gutter: 120px;
+  --container-gutter-mobile: 24px;
+  --section-space: 60px;
+  --section-space-mobile: 64px;
+
+  /* border and radius tokens */
+  --border-hairline: 1px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  /* content width tokens */
+  --content-width-sm: 249px;
+  --content-width-md: 500px;
+  --content-width-lg: 590px;
+
+  /* component size tokens */
+  --logo-width: 112px;
+  --icon-button-size: 34px;
+  --burger-line-height: 2px;
+  --thumb-width: 95px;
+  --thumb-height: 64px;
+  --preview-height: 325px;
+  --preview-height-mobile: 286px;
+  --system-gallery-height: 280px;
+  --system-bar-top: 100px;
+
+  /* component spacing tokens */
+  --stack-2xs: 6px;
+  --stack-xs: 8px;
+  --stack-sm: 14px;
+  --stack-md: 18px;
+  --stack-lg: 24px;
+  --stack-lg-plus: 28px;
+  --stack-xl: 40px;
+  --stack-3xs-plus: 9px;
+  --stack-xs-plus: 10px;
+  --stack-sm-minus: 12px;
+  --cluster-sm: 16px;
+  --cluster-md: 32px;
+  --cluster-lg: 64px;
+  --cluster-xl: 110px;
+  --cluster-2xl: 124px;
+  --cluster-3xl: 140px;
+
+  /* grid tokens */
+  --gallery-thumb-columns: repeat(6, 95px);
+  --systems-condensed-width: calc(33.3333% - 8px);
+  --grid-gap-sm: 16px;
+  --grid-gap-md: 32px;
+  --grid-gap-lg: 64px;
+
+  /* motion tokens used by components */
+  --motion-duration-ui-fast: 180ms;
+  --motion-duration-ui-base: 240ms;
+  --motion-duration-ui-slow: 260ms;
+  --motion-duration-surface: 360ms;
+  --motion-duration-panel: 520ms;
+
+  /* text rhythm tokens */
+  --text-line-relaxed: 1.6;
+  --text-gap-inline: 0.5em;
+}
+
+.t-display,
+.t-h1 {
+  font-family: var(--ff-manrope);
+  font-weight: var(--type-display-weight);
+  font-size: var(--type-display-size);
+  line-height: var(--type-display-line);
+  letter-spacing: var(--type-display-spacing);
+  text-transform: uppercase;
+  color: var(--c-black);
+}
+
+.t-title,
+.t-h2 {
+  font-family: var(--ff-manrope);
+  font-weight: var(--type-title-weight);
+  font-size: var(--type-title-size);
+  line-height: var(--type-title-line);
+  letter-spacing: var(--type-title-spacing);
+  color: var(--c-black);
+}
+
+.t-body,
+.t-body-m {
+  font-family: var(--ff-manrope);
+  font-weight: var(--type-body-weight);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  letter-spacing: var(--type-body-spacing);
+  color: var(--c-black);
+}
+
+.t-label,
+.t-body-s {
+  font-family: var(--ff-manrope);
+  font-weight: var(--type-label-weight);
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-line);
+  letter-spacing: var(--type-label-spacing);
+  color: var(--c-black);
+}
+
+.t-caption,
+.t-descript {
+  font-family: var(--ff-manrope);
+  font-weight: var(--type-caption-weight);
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  letter-spacing: var(--type-caption-spacing);
+  color: var(--c-black);
+}

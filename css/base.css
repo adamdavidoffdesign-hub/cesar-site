@@ -1,0 +1,79 @@
+/* ===== сброс стилей ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ===== базовые настройки ===== */
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--ff-manrope);
+    font-size: var(--type-body-size);
+    font-weight: var(--type-body-weight);
+    line-height: var(--type-body-line);
+    letter-spacing: var(--type-body-spacing);
+    color: var(--c-black);
+    background-color: var(--c-white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body.page-home {
+    background-color: var(--c-white);
+  }
+
+  body.page-template {
+    background-color: var(--c-smoke);
+  }
+
+  body.page-template.design-system-page {
+    background-color: var(--c-white);
+  }
+
+  .page-template__main {
+    min-height: 100vh;
+  }
+  
+  /* ===== типографика ===== */
+  h1 {
+    font-size: var(--type-display-size);
+    font-weight: var(--type-display-weight);
+    line-height: var(--type-display-line);
+    letter-spacing: var(--type-display-spacing);
+  }
+  
+  h2 {
+    font-size: var(--type-title-size);
+    font-weight: var(--type-title-weight);
+    line-height: var(--type-title-line);
+    letter-spacing: var(--type-title-spacing);
+  }
+  
+  p {
+    font-size: var(--type-body-size);
+    font-weight: var(--type-body-weight);
+    line-height: var(--type-body-line);
+    letter-spacing: var(--type-body-spacing);
+  }
+  
+  /* ===== ссылки ===== */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* ===== изображения ===== */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* ===== списки ===== */
+  ul, ol {
+    list-style: none;
+  }
