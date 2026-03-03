@@ -1023,6 +1023,7 @@
 
 /* ===== contacts page ===== */
 .contacts-page__inner {
+  border-top: none;
   padding-top: var(--section-space);
   padding-bottom: var(--section-space);
 }
