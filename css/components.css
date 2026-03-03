@@ -996,8 +996,7 @@
 /* ===== about page ===== */
 .about-hero,
 .about-content,
-.contacts-main,
-.contacts-details,
+.contacts-page,
 .collection-hero,
 .collection-content {
   width: 100%;
@@ -1032,6 +1031,12 @@
 }
 
 /* ===== contacts page ===== */
+.contacts-page,
+.contacts-page__intro,
+.contacts-page__form-col {
+  width: 100%;
+}
+
 .contacts-page__inner {
   border-top: none;
   padding-top: var(--section-space);
