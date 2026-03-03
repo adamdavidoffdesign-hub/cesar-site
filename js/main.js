@@ -68,6 +68,17 @@ function createRafScheduler(callback) {
   };
 }
 
+function resolveSitePaths(root) {
+  var scope = root || document;
+  var inCollections = (window.location.pathname || '').indexOf('/collections/') !== -1;
+
+  scope.querySelectorAll('[data-site-path]').forEach(function (link) {
+    var sitePath = link.getAttribute('data-site-path');
+    if (!sitePath) return;
+    link.setAttribute('href', (inCollections ? '../' : '') + sitePath);
+  });
+}
+
 function initSystems() {
   var list = document.querySelector('.systems__list');
   var template = document.getElementById('system-card-template');
@@ -100,6 +111,7 @@ function initSystems() {
 
     var link = card.querySelector('.system__link');
     link.href = item.link;
+    link.removeAttribute('aria-disabled');
 
     list.appendChild(card);
   });
@@ -161,13 +173,7 @@ function initHeader() {
   if (!header) return;
   var heroSection = document.getElementById('hero');
   var mobileMenu = document.getElementById('mobile-menu');
-  var inCollections = (window.location.pathname || '').indexOf('/collections/') !== -1;
-
-  header.querySelectorAll('[data-site-path]').forEach(function (link) {
-    var sitePath = link.getAttribute('data-site-path');
-    if (!sitePath) return;
-    link.setAttribute('href', (inCollections ? '../' : '') + sitePath);
-  });
+  resolveSitePaths(header);
 
   // ===== header state + hide on scroll down / show on scroll up =====
   var lastScrollY = window.scrollY;
@@ -477,6 +483,7 @@ function loadPartials() {
     ? fetchPartial(getPartialCandidates('footer.html?v=2'), 'Footer')
         .then(function (html) {
           footerEl.innerHTML = html;
+          resolveSitePaths(footerEl);
         })
         .catch(function (error) {
           console.error(error);
