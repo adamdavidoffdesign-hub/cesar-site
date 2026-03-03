@@ -1041,22 +1041,18 @@
   margin-top: var(--space-xl);
 }
 
+.contacts-page__eyebrow {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
 .contacts-page__title {
   margin: 0;
-  font-size: var(--fs-16);
-  font-weight: var(--fw-semibold);
-  line-height: var(--lh-140);
-  letter-spacing: var(--ls-08);
-  text-transform: none;
 }
 
 .contacts-page__subtitle {
   margin-top: var(--space-xs);
   max-width: 380px;
-  font-size: var(--fs-14);
-  font-weight: var(--fw-medium);
-  line-height: var(--lh-150);
-  letter-spacing: var(--ls-00);
 }
 
 .contacts-page__form {
@@ -1071,12 +1067,6 @@
   border-bottom: var(--border-hairline) solid rgba(var(--c-black-rgb), 0.25);
   background: transparent;
   padding: 0 0 var(--stack-xs);
-  font-family: var(--ff-manrope);
-  font-size: var(--fs-14);
-  font-weight: var(--fw-medium);
-  line-height: var(--lh-150);
-  letter-spacing: var(--ls-00);
-  color: var(--c-black);
   outline: none;
 }
 
@@ -1093,26 +1083,14 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  padding: 0 0 var(--stack-2xs);
   border: none;
-  border-bottom: var(--border-hairline) solid currentColor;
   background: transparent;
-  font-family: var(--ff-manrope);
-  font-size: var(--fs-14);
-  font-weight: var(--fw-medium);
-  line-height: var(--lh-150);
-  letter-spacing: var(--ls-00);
-  color: var(--c-black);
   cursor: pointer;
 }
 
 .contacts-page__privacy {
   margin-top: var(--space-xs);
   max-width: 367px;
-  font-size: var(--fs-10);
-  font-weight: var(--fw-semibold);
-  line-height: var(--lh-150);
-  letter-spacing: var(--ls-02);
   color: var(--c-gray);
 }
 
@@ -1140,19 +1118,10 @@
 
 .contacts-page__info-label {
   margin-bottom: var(--space-2xs);
-  font-size: var(--fs-14);
-  font-weight: var(--fw-medium);
-  line-height: var(--lh-150);
-  letter-spacing: var(--ls-00);
-  color: var(--c-gray);
 }
 
 .contacts-page__info-text,
 .contacts-page__info-text a {
-  font-size: var(--fs-14);
-  font-weight: var(--fw-medium);
-  line-height: var(--lh-150);
-  letter-spacing: var(--ls-00);
   color: var(--c-black);
 }
 
