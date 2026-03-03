@@ -8,7 +8,7 @@ var SYSTEMS_DATA = [
       'Позволяет создавать острова и композиции сложной формы, подстраиваясь под архитектуру пространства.',
       'Акцент на пластичность и игру света.'
     ],
-    images: ['images/tangram/tangram_1.png', 'images/tangram/tangram_2.png', 'images/tangram/tangram_3.png'],
+    images: ['images/tangram/tangram_1.webp', 'images/tangram/tangram_2.webp', 'images/tangram/tangram_3.webp'],
     link: 'collections/tangram.html'
   },
   {
@@ -19,7 +19,7 @@ var SYSTEMS_DATA = [
       'Подходит для индивидуальных проектов и сложных планировок.',
       'Чёткая геометрия и контроль каждой детали.'
     ],
-    images: ['images/maxima/maxima_1.png', 'images/maxima/maxima_2.png', 'images/maxima/maxima_3.png'],
+    images: ['images/maxima/maxima_1.webp', 'images/maxima/maxima_2.webp', 'images/maxima/maxima_3.webp'],
     link: 'collections/maxima.html'
   },
   {
@@ -30,7 +30,7 @@ var SYSTEMS_DATA = [
       'Кухня как центр дома, открытая к изменениям и новым сценариям.',
       'Функциональность, технологичность и свобода компоновки.'
     ],
-    images: ['images/unit/unit_1.png', 'images/unit/unit_2.png', 'images/unit/unit_3.png'],
+    images: ['images/unit/unit_1.webp', 'images/unit/unit_2.webp', 'images/unit/unit_3.webp'],
     link: 'collections/unit.html'
   },
   {
@@ -41,7 +41,7 @@ var SYSTEMS_DATA = [
       'Минималистичная система, где форма, материал и пространство работают вместе.',
       'Для сдержанных интерьеров и спокойного ритма жизни.'
     ],
-    images: ['images/n-elle/n-elle_1.png', 'images/n-elle/n-elle_2.png', 'images/n-elle/n-elle_3.png'],
+    images: ['images/n-elle/n-elle_1.webp', 'images/n-elle/n-elle_2.webp', 'images/n-elle/n-elle_3.webp'],
     link: 'collections/n-elle.html'
   },
   {
@@ -50,7 +50,7 @@ var SYSTEMS_DATA = [
     desc: [
       'Архитектурная система, основанная на работе с плоскостью и материалом. Игра пропорций и текстур формирует выразительный, но сдержанный образ. Для интерьеров, где кухня становится частью общей архитектуры.'
     ],
-    images: ['images/intarsio/intarsio_1.png', 'images/intarsio/intarsio_2.png', 'images/intarsio/intarsio_3.png'],
+    images: ['images/intarsio/intarsio_1.webp', 'images/intarsio/intarsio_2.webp', 'images/intarsio/intarsio_3.webp'],
     link: 'collections/intarsio.html'
   }
 ];
@@ -105,6 +105,8 @@ function initSystems() {
       var img = document.createElement('img');
       img.src = src;
       img.alt = item.name;
+      img.loading = 'lazy';
+      img.decoding = 'async';
       div.appendChild(img);
       photosEl.appendChild(div);
     });
@@ -328,6 +330,7 @@ function initAboutGallery() {
   var nextPreviewImage = previewImage.cloneNode(false);
   nextPreviewImage.className = 'about__preview-image about__preview-image--next';
   nextPreviewImage.alt = previewImage.alt || '';
+  nextPreviewImage.decoding = 'async';
   nextPreviewImage.setAttribute('aria-hidden', 'true');
   previewFrame.appendChild(nextPreviewImage);
 
