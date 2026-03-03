@@ -144,6 +144,30 @@ function initCollectionPage() {
   });
 }
 
+function initContactCtaForm() {
+  var form = document.querySelector('.contact-cta__form');
+  if (!form) return;
+
+  var emailInput = form.querySelector('.contact-cta__input');
+  if (!emailInput) return;
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    var email = emailInput.value.trim();
+    var subject = encodeURIComponent('Заявка с сайта Cesar Studio');
+    var body = encodeURIComponent([
+      'Новая заявка с сайта Cesar Studio.',
+      '',
+      'Email клиента: ' + email
+    ].join('\n'));
+
+    window.location.href = 'mailto:INTERIORTODAY@MAIL.RU?subject=' + subject + '&body=' + body;
+  });
+}
+
 function initSystemsBar() {
   var bar = document.querySelector('.systems__bar');
   if (!bar) return;
@@ -531,6 +555,7 @@ initHeroWordReveal();
 initAboutGallery();
 initSystems(); /* карточки систем — сразу, не ждём загрузки header/footer */
 initCollectionPage();
+initContactCtaForm();
 initSystemsBar();
 loadPartials().then(function () {
   initRevealAnimations();
