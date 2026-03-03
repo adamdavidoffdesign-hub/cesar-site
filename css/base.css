@@ -30,6 +30,10 @@
     background-color: var(--c-smoke);
   }
 
+  body.page-template.page-contacts {
+    background-color: var(--c-white);
+  }
+
   body.page-template.design-system-page {
     background-color: var(--c-white);
   }
