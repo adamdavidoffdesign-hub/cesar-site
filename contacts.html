@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/tokens.css?v=6">
   <link rel="stylesheet" href="css/base.css?v=2">
   <link rel="stylesheet" href="css/layout.css?v=3">
-  <link rel="stylesheet" href="css/components.css?v=43">
+  <link rel="stylesheet" href="css/components.css?v=44">
   <link rel="stylesheet" href="css/animations.css?v=10">
 </head>
 
@@ -19,22 +19,52 @@
   <!-- навигация -->
   <header id="header" class="header"></header>
 
-  <!-- основное содержимое страницы "Контакты" -->
   <main class="page-template__main">
-    <section class="contacts-main" aria-labelledby="contacts-main-title">
-      <div class="container contacts-main__inner">
-        <span class="section-label">Контакты</span>
-        <h1 id="contacts-main-title" class="contacts-main__title">Свяжитесь с нами</h1>
-      </div>
-    </section>
+    <section class="contacts-page" aria-labelledby="contacts-page-title">
+      <div class="container contacts-page__inner">
+        <div class="contacts-page__lead">
+          <div class="contacts-page__intro">
+            <h1 id="contacts-page-title" class="contacts-page__title">Обсудим ваш проект</h1>
+            <p class="contacts-page__subtitle">Запишитесь на консультацию в студию Cesar в Москве.</p>
+          </div>
 
-    <section class="contacts-details" aria-labelledby="contacts-details-title">
-      <div class="container contacts-details__inner">
-        <h2 id="contacts-details-title" class="contacts-details__title">Контактная информация</h2>
-        <div class="contacts-details__content">
-          <p>Москва, Нижняя Сыромятническая улица, дом 11, строение 52</p>
-          <p><a href="tel:+74957557055">+7 (495) 755-70-55</a></p>
-          <p><a href="mailto:interiortoday@mail.ru">interiortoday@mail.ru</a></p>
+          <div class="contacts-page__form-col">
+            <form class="contacts-page__form" data-mailto-form data-mailto-recipient="INTERIORTODAY@MAIL.RU" data-mailto-subject="Заявка на консультацию Cesar Studio">
+              <input class="contacts-page__input" type="text" name="Имя" placeholder="Имя" aria-label="Имя" required>
+              <input class="contacts-page__input" type="tel" name="Телефон" placeholder="Телефон" aria-label="Телефон" required>
+              <input class="contacts-page__input" type="email" name="Email" placeholder="Email" aria-label="Email" autocomplete="email" required>
+              <button class="contacts-page__submit" type="submit">Обсудить проект <span class="link-arrow">→</span></button>
+              <p class="contacts-page__privacy">Отправляя запрос, вы соглашаетесь с политикой конфиденциальности.</p>
+            </form>
+          </div>
+        </div>
+
+        <div class="contacts-page__details">
+          <div class="contacts-page__media">
+            <img src="images/about/carusel_4.png" alt="Предметная композиция в студии Cesar">
+          </div>
+
+          <div class="contacts-page__info">
+            <div class="contacts-page__info-group">
+              <p class="contacts-page__info-label">Адрес</p>
+              <p class="contacts-page__info-text">12345, Москва<br>Нижняя Сыромятническая, дом 11, стр. 52</p>
+            </div>
+
+            <div class="contacts-page__info-group">
+              <p class="contacts-page__info-label">Телеграм</p>
+              <p class="contacts-page__info-text"><a href="tel:+74957557055">+7 (495) 755-70-55</a></p>
+            </div>
+
+            <div class="contacts-page__info-group">
+              <p class="contacts-page__info-label">Email</p>
+              <p class="contacts-page__info-text"><a href="mailto:interiortoday@mail.ru">interiortoday@mail.ru</a></p>
+            </div>
+
+            <div class="contacts-page__info-group">
+              <p class="contacts-page__info-label">График работы</p>
+              <p class="contacts-page__info-text">Пн–Сб: 10:00–19:00</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

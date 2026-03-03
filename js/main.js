@@ -144,27 +144,32 @@ function initCollectionPage() {
   });
 }
 
-function initContactCtaForm() {
-  var form = document.querySelector('.contact-cta__form');
-  if (!form) return;
+function initMailtoForms() {
+  document.querySelectorAll('[data-mailto-form], .contact-cta__form').forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-  var emailInput = form.querySelector('.contact-cta__input');
-  if (!emailInput) return;
+      if (!form.reportValidity()) return;
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
+      var recipient = form.getAttribute('data-mailto-recipient') || 'INTERIORTODAY@MAIL.RU';
+      var subject = encodeURIComponent(form.getAttribute('data-mailto-subject') || 'Заявка с сайта Cesar Studio');
+      var fields = [];
 
-    if (!form.reportValidity()) return;
+      form.querySelectorAll('input, textarea, select').forEach(function (field) {
+        var value = field.value.trim();
+        if (!value) return;
+        var label = field.name || field.getAttribute('aria-label') || field.placeholder || 'Поле';
+        fields.push(label + ': ' + value);
+      });
 
-    var email = emailInput.value.trim();
-    var subject = encodeURIComponent('Заявка с сайта Cesar Studio');
-    var body = encodeURIComponent([
-      'Новая заявка с сайта Cesar Studio.',
-      '',
-      'Email клиента: ' + email
-    ].join('\n'));
+      var body = encodeURIComponent([
+        'Новая заявка с сайта Cesar Studio.',
+        '',
+        fields.join('\n')
+      ].join('\n'));
 
-    window.location.href = 'mailto:INTERIORTODAY@MAIL.RU?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+    });
   });
 }
 
@@ -555,7 +560,7 @@ initHeroWordReveal();
 initAboutGallery();
 initSystems(); /* карточки систем — сразу, не ждём загрузки header/footer */
 initCollectionPage();
-initContactCtaForm();
+initMailtoForms();
 initSystemsBar();
 loadPartials().then(function () {
   initRevealAnimations();
