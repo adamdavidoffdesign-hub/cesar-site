@@ -1084,6 +1084,12 @@
   background: transparent;
   padding: 0 0 var(--stack-xs);
   outline: none;
+  font-family: var(--ff-manrope);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  line-height: var(--type-body-line);
+  letter-spacing: var(--type-body-spacing);
+  color: var(--c-black);
 }
 
 .contacts-page__input + .contacts-page__input {
@@ -1092,6 +1098,7 @@
 
 .contacts-page__input::placeholder {
   color: var(--c-black);
+  opacity: 1;
 }
 
 .contacts-page__submit {
@@ -1133,6 +1140,7 @@
 }
 
 .contacts-page__info-label {
+  color: var(--c-gray);
   margin-bottom: var(--space-2xs);
 }
 
