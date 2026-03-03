@@ -40,6 +40,13 @@
 
   .page-template__main {
     min-height: 100vh;
+    padding-top: calc(var(--section-space) + var(--stack-lg) + var(--space-sm));
+  }
+
+  @media (max-width: 768px) {
+    .page-template__main {
+      padding-top: calc(var(--section-space-mobile) + var(--stack-lg) + var(--space-sm));
+    }
   }
   
   /* ===== типографика ===== */
