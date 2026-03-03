@@ -134,8 +134,8 @@ test('core HTML blocks have matching component selectors', () => {
     '.contact-cta__col',
     '.about-hero',
     '.about-content',
-    '.contacts-main',
-    '.contacts-details',
+    '.page-contacts',
+    '.contacts-page',
     '.collection-hero',
     '.collection-content'
   ].forEach((selector) => {
