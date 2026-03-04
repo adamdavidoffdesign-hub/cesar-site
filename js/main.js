@@ -418,7 +418,8 @@ function initRevealAnimations() {
 
   var staggerGroups = [
     { parent: '.header__nav, .menu-nav-bar__desktop', children: 'a', baseDelay: 0, step: 45, childClass: 'reveal reveal--none' },
-    { parent: '.about-page__inner', children: '.about-page__section, .about-page__hero-media, .about-page__mosaic', baseDelay: 0, step: 60, childClass: 'reveal reveal--soft' }
+    { parent: '.about-page__inner', children: '.about-page__section, .about-page__hero-media, .about-page__mosaic', baseDelay: 0, step: 60, childClass: 'reveal reveal--soft' },
+    { parent: '.collection-page__inner', children: '.collection-page__header, .collection-page__img-hero, .collection-page__rich-block, .collection-page__img-grid', baseDelay: 0, step: 60, childClass: 'reveal reveal--soft' }
   ];
 
   staggerGroups.forEach(function (group) {
