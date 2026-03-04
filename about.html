@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/tokens.css?v=6">
   <link rel="stylesheet" href="css/base.css?v=2">
   <link rel="stylesheet" href="css/layout.css?v=3">
-  <link rel="stylesheet" href="css/components.css?v=46">
+  <link rel="stylesheet" href="css/components.css?v=47">
   <link rel="stylesheet" href="css/animations.css?v=10">
 </head>
 
@@ -21,19 +21,132 @@
 
   <!-- основное содержимое страницы "О нас" -->
   <main class="page-template__main">
-    <section class="about-hero" aria-labelledby="about-hero-title">
-      <div class="container about-hero__inner">
-        <span class="section-label t-label">О студии</span>
-        <h1 id="about-hero-title" class="about-hero__title t-display">CESAR Studio</h1>
-      </div>
-    </section>
+    <section class="about-page" aria-labelledby="about-page-title">
+      <div class="container about-page__inner">
+        <div class="about-page__section about-page__section--intro">
+          <div class="about-page__heading-col">
+            <p class="about-page__eyebrow t-title">Cesar Studio в Москве</p>
+          </div>
+          <div class="about-page__content-col">
+            <h1 id="about-page-title" class="about-page__headline t-title">Официальный дилер фабрики Cesar в России.</h1>
+            <div class="about-page__copy t-body">
+              <p>Мы работаем напрямую с производством в Италии и проектируем кухни как архитектурные системы, адаптированные под конкретное пространство.</p>
+              <p>Помогаем вписать кухни Cesar в архитектуру дома, учитывая планировку, свет и ваши сценарии жизни.</p>
+            </div>
+            <a class="about-page__link about__link t-label" href="contacts.html">Записаться в студию <span class="link-arrow">→</span></a>
+          </div>
+        </div>
 
-    <section class="about-content" aria-labelledby="about-content-title">
-      <div class="container about-content__inner">
-        <h2 id="about-content-title" class="about-content__title t-title">Официальный дилер фабрики Cesar в России</h2>
-        <div class="about-content__text t-body">
-          <p>Мы работаем напрямую с производством в Италии и реализуем кухни как архитектурные системы, адаптированные под конкретное пространство.</p>
-          <p>Кухни Cesar производятся в Италии с контролем качества на каждом этапе.</p>
+        <figure class="about-page__hero-media">
+          <img src="images/about/about_img-1.png" alt="Кухонный остров Cesar Studio у панорамного окна" loading="eager" decoding="async">
+        </figure>
+
+        <div class="about-page__section">
+          <div class="about-page__heading-col">
+            <h2 class="about-page__section-title t-title">Кухни как архитектурные системы</h2>
+          </div>
+          <div class="about-page__content-col">
+            <div class="about-page__copy t-body">
+              <p>Мы рассматриваем кухню как часть архитектуры дома, а не отдельный гарнитур. Важны пропорции, ритм объёмов и свет.</p>
+              <p>Для основы используем системы Maxima 2.2, Intarsio, Unit и N_Elle, адаптируя их под конкретную планировку и образ жизни.</p>
+            </div>
+            <a class="about-page__link about__link t-label" href="contacts.html">Записаться в студию <span class="link-arrow">→</span></a>
+          </div>
+        </div>
+
+        <div class="about-page__mosaic" aria-label="Архитектурные проекты Cesar Studio">
+          <figure class="about-page__mosaic-item about-page__mosaic-item--wide">
+            <img src="images/about/about_img-architecture-1.png" alt="Архитектурная кухня Cesar с винной витриной" loading="lazy" decoding="async">
+          </figure>
+          <figure class="about-page__mosaic-item">
+            <img src="images/about/about_img-architecture-2.jpg" alt="Фрагмент кухни Cesar с деревянной отделкой" loading="lazy" decoding="async">
+          </figure>
+          <figure class="about-page__mosaic-item">
+            <img src="images/about/about_img-architecture-3.jpg" alt="Кухня Cesar с видом на террасу" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <div class="about-page__section">
+          <div class="about-page__heading-col">
+            <h2 class="about-page__section-title t-title">Наше архитектурное бюро</h2>
+          </div>
+          <div class="about-page__content-col">
+            <div class="about-page__copy t-body">
+              <p>Two DA это студия, где архитектурное мышление встречается с высоким качеством дизайна, а каждый проект создаётся как уникальная история жизни.</p>
+              <p>С 2015 года мы проектируем интерьеры и пространства, которые отражают стиль, характер и потребности наших клиентов, соединяя современную элегантность и практическую функциональность.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="about-page__hero-media">
+          <img src="images/about/about_img-burau.png" alt="Интерьер архитектурного бюро Cesar Studio" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="about-page__section about-page__section--process">
+          <div class="about-page__heading-col">
+            <h2 class="about-page__section-title t-title">Как мы работаем</h2>
+          </div>
+          <div class="about-page__content-col about-page__content-col--full">
+            <div class="about-page__process-grid">
+              <article class="about-page__process-card">
+                <div class="about-page__process-media">
+                  <span class="about-page__process-index t-label">01</span>
+                  <img src="images/about/carusel_1.webp" alt="Анализ пространства и планировки" loading="lazy" decoding="async">
+                </div>
+                <p class="about-page__process-text t-body">Анализ пространства. Смотрим планировку, инженерные точки и свет, обсуждаем сценарии использования кухни.</p>
+              </article>
+
+              <article class="about-page__process-card">
+                <div class="about-page__process-media">
+                  <span class="about-page__process-index t-label">02</span>
+                  <img src="images/about/carusel_2.webp" alt="Разработка проекта кухни Cesar" loading="lazy" decoding="async">
+                </div>
+                <p class="about-page__process-text t-body">Проект. Выбираем систему Cesar, материалы и конфигурацию, готовим проект с визуализациями и чертежами.</p>
+              </article>
+
+              <article class="about-page__process-card">
+                <div class="about-page__process-media">
+                  <span class="about-page__process-index t-label">03</span>
+                  <img src="images/about/carusel_4.webp" alt="Производство кухни на фабрике Cesar" loading="lazy" decoding="async">
+                </div>
+                <p class="about-page__process-text t-body">Производство. Передаём заказ на фабрику Cesar в Италии, сопровождаем комплектацию и сроки.</p>
+              </article>
+
+              <article class="about-page__process-card">
+                <div class="about-page__process-media">
+                  <span class="about-page__process-index t-label">04</span>
+                  <img src="images/unit/unit_1.webp" alt="Монтаж и сервис кухни Cesar" loading="lazy" decoding="async">
+                </div>
+                <p class="about-page__process-text t-body">Монтаж и сервис. Организуем доставку и монтаж, остаёмся на связи по настройке и изменениям.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-page__section about-page__section--studio">
+          <div class="about-page__heading-col">
+            <p class="about-page__section-title t-title">Cesar Studio в Москве</p>
+          </div>
+          <div class="about-page__content-col about-page__content-col--full">
+            <div class="about-page__studio-layout">
+              <figure class="about-page__studio-media">
+                <img src="images/about/about_img-studio.png" alt="Салон Cesar Studio в Москве" loading="lazy" decoding="async">
+              </figure>
+              <div class="about-page__studio-copy">
+                <div class="about-page__copy t-body">
+                  <p>Наш салон находится на улице Нижняя Сыромятническая, 11, строение 52. Здесь можно увидеть материалы, фурнитуру и обсудить планировку с консультантом.</p>
+                  <p>Запишитесь на визит, чтобы разобрать план квартиры и подобрать конфигурацию кухни.</p>
+                </div>
+                <div class="about-page__studio-meta t-label">
+                  <p>12345, Москва Россия</p>
+                  <p>Нижняя Сыромятническая улица, дом 11, строение 52</p>
+                  <p><a href="tel:+74957557055">+7 (495) 755-70-55</a></p>
+                  <p><a href="mailto:interiortoday@mail.ru">interiortoday@mail.ru</a></p>
+                </div>
+                <a class="about-page__link about__link t-label" href="contacts.html">Как добраться <span class="link-arrow">→</span></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
