@@ -1052,6 +1052,14 @@
   border-top: var(--border-hairline) solid var(--c-black);
 }
 
+.about-page__section--fixed-cols {
+  grid-template-columns: 598px 598px;
+}
+
+.about-page__section--process {
+  gap: var(--space-md);
+}
+
 .about-page__heading-col,
 .about-page__content-col {
   min-width: 0;
@@ -1120,6 +1128,10 @@
 
 .about-page__mosaic-item {
   height: 392px;
+}
+
+.about-page__section--studio {
+  grid-template-columns: 297px minmax(0, 1fr);
 }
 
 .about-page__studio-layout {
