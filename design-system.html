@@ -29,6 +29,7 @@
       <a class="ds-topnav__link" href="#ds-motion">Motion</a>
       <a class="ds-topnav__link" href="#ds-organisms">Organisms</a>
       <a class="ds-topnav__link" href="#ds-directory">Directory</a>
+      <a class="ds-topnav__link" href="#ds-audit">Audit</a>
     </div>
   </nav>
 
@@ -655,6 +656,148 @@
           </ul>
         </article>
       </div>
+    </section>
+
+    <!-- ===== 07 Audit ===== -->
+    <section class="ds-section" id="ds-audit">
+      <div class="ds-section__head">
+        <span class="ds-section__num">07</span>
+        <h2 class="ds-section__title">Audit — Pencil vs Site</h2>
+      </div>
+
+      <!-- Pages -->
+      <div class="ds-subsection">
+        <p class="ds-subsection__title">Страницы</p>
+        <div class="ds-grid ds-grid--2">
+
+          <article class="ds-card">
+            <header class="ds-card__head">
+              <span class="ds-kicker">✅ Реализовано</span>
+            </header>
+            <ul class="ds-dir-list">
+              <li><code class="ds-code">index.html</code><span class="ds-muted">главная — полностью</span></li>
+              <li><code class="ds-code">about.html</code><span class="ds-muted">о студии — полностью</span></li>
+              <li><code class="ds-code">contacts.html</code><span class="ds-muted">контакты — полностью</span></li>
+              <li><code class="ds-code">collections/tangram.html</code><span class="ds-muted">заглушка</span></li>
+              <li><code class="ds-code">collections/maxima.html</code><span class="ds-muted">заглушка</span></li>
+              <li><code class="ds-code">collections/unit.html</code><span class="ds-muted">заглушка</span></li>
+              <li><code class="ds-code">collections/n-elle.html</code><span class="ds-muted">заглушка</span></li>
+              <li><code class="ds-code">collections/intarsio.html</code><span class="ds-muted">заглушка</span></li>
+              <li><code class="ds-code">offer.html</code><span class="ds-muted">публичная оферта</span></li>
+              <li><code class="ds-code">requisites.html</code><span class="ds-muted">реквизиты</span></li>
+            </ul>
+          </article>
+
+          <article class="ds-card">
+            <header class="ds-card__head">
+              <span class="ds-kicker">⚠️ Не реализовано / в работе</span>
+            </header>
+            <ul class="ds-dir-list">
+              <li><code class="ds-code">collections/*.html</code><span class="ds-muted">полный контент коллекций (макет: catalog page)</span></li>
+              <li><code class="ds-code">—</code><span class="ds-muted">мобильная версия catalog page</span></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Sections -->
+      <div class="ds-subsection">
+        <p class="ds-subsection__title">Секции и блоки</p>
+        <div class="ds-grid ds-grid--2">
+
+          <article class="ds-card">
+            <header class="ds-card__head">
+              <span class="ds-kicker">✅ Реализовано</span>
+            </header>
+            <ul class="ds-dir-list">
+              <li><code class="ds-code">.hero</code><span class="ds-muted">главная, desktop + mobile</span></li>
+              <li><code class="ds-code">.about</code><span class="ds-muted">главная, desktop + mobile</span></li>
+              <li><code class="ds-code">.systems</code><span class="ds-muted">главная, desktop + mobile</span></li>
+              <li><code class="ds-code">.service</code><span class="ds-muted">главная, desktop + mobile</span></li>
+              <li><code class="ds-code">.contact-cta</code><span class="ds-muted">главная, desktop + mobile</span></li>
+              <li><code class="ds-code">.header</code><span class="ds-muted">global, desktop + mobile menu</span></li>
+              <li><code class="ds-code">.footer</code><span class="ds-muted">global, desktop + mobile</span></li>
+              <li><code class="ds-code">.about-page</code><span class="ds-muted">about.html, все секции</span></li>
+              <li><code class="ds-code">.contacts-page</code><span class="ds-muted">contacts.html, все секции</span></li>
+              <li><code class="ds-code">.collection-hero</code><span class="ds-muted">заглушка для коллекций</span></li>
+            </ul>
+          </article>
+
+          <article class="ds-card">
+            <header class="ds-card__head">
+              <span class="ds-kicker">⚠️ Не реализовано</span>
+            </header>
+            <ul class="ds-dir-list">
+              <li><code class="ds-code">catalog page</code><span class="ds-muted">страница коллекции — полный контент (pencil: 5KPj4)</span></li>
+              <li><code class="ds-code">systems content</code><span class="ds-muted">полные страницы систем Tangram, Maxima, Unit, N_Elle, Intarsio</span></li>
+              <li><code class="ds-code">services content</code><span class="ds-muted">детальный контент услуг (pencil: dFaFk)</span></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Pencil frames map -->
+      <div class="ds-subsection">
+        <p class="ds-subsection__title">Соответствие фреймов Pencil → HTML</p>
+        <div class="ds-grid ds-grid--2">
+
+          <article class="ds-card">
+            <header class="ds-card__head">
+              <span class="ds-kicker">Pencil → Site</span>
+            </header>
+            <ul class="ds-dir-list">
+              <li><code class="ds-code">8rZsG desk</code><span class="ds-muted">→ index.html (все секции)</span></li>
+              <li><code class="ds-code">xLvOj about</code><span class="ds-muted">→ about.html</span></li>
+              <li><code class="ds-code">8dTSW main</code><span class="ds-muted">→ .hero в index.html</span></li>
+              <li><code class="ds-code">RSWTi about</code><span class="ds-muted">→ .about в index.html</span></li>
+              <li><code class="ds-code">lGvrR 3_systems</code><span class="ds-muted">→ .systems в index.html</span></li>
+              <li><code class="ds-code">dFaFk services</code><span class="ds-muted">→ .service в index.html</span></li>
+              <li><code class="ds-code">5KPj4 catalog page</code><span class="ds-muted">→ collections/*.html (не реализован)</span></li>
+              <li><code class="ds-code">JcYkC footer desktop</code><span class="ds-muted">→ partials/footer.html</span></li>
+              <li><code class="ds-code">5ZMmY footer mob</code><span class="ds-muted">→ partials/footer.html (mobile)</span></li>
+            </ul>
+          </article>
+
+          <article class="ds-card">
+            <header class="ds-card__head">
+              <span class="ds-kicker">Pencil UI Kit</span>
+              <code class="ds-code">отдельные компоненты/блоки</code>
+            </header>
+            <ul class="ds-dir-list">
+              <li><code class="ds-code">5m6WR link</code><span class="ds-muted">→ .hero__link / .about__link / .system__link</span></li>
+              <li><code class="ds-code">YQ6ea logo</code><span class="ds-muted">→ .brand-logo SVG</span></li>
+              <li><code class="ds-code">0SYhZ nav</code><span class="ds-muted">→ .header__nav / .menu-nav-bar</span></li>
+              <li><code class="ds-code">V6IZ0 menu-icons</code><span class="ds-muted">→ .header__burger</span></li>
+              <li><code class="ds-code">ZqmV3 img_c3</code><span class="ds-muted">→ мозаики в коллекциях</span></li>
+              <li><code class="ds-code">CLFDd text_598x392</code><span class="ds-muted">→ текстовые блоки коллекций</span></li>
+              <li><code class="ds-code">WggeC img_120x600</code><span class="ds-muted">→ полноширокие фото коллекций</span></li>
+              <li><code class="ds-code">T7je2 img_598x392</code><span class="ds-muted">→ img size reference</span></li>
+              <li><code class="ds-code">pO63G img_297x392</code><span class="ds-muted">→ img size reference</span></li>
+              <li><code class="ds-code">Ny6MH img_168x168</code><span class="ds-muted">→ img size reference</span></li>
+              <li><code class="ds-code">BlXLR img 516x280</code><span class="ds-muted">→ img size reference</span></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Next steps -->
+      <div class="ds-subsection">
+        <p class="ds-subsection__title">Что делать дальше</p>
+        <article class="ds-card">
+          <header class="ds-card__head">
+            <span class="ds-kicker">Приоритеты</span>
+          </header>
+          <ul class="ds-dir-list">
+            <li><code class="ds-code">1</code><span class="ds-muted">Реализовать полный контент страниц коллекций (catalog page, pencil: 5KPj4) — 5 страниц</span></li>
+            <li><code class="ds-code">2</code><span class="ds-muted">Добавить reveal-анимации на contacts.html и collections/*.html по образцу главной</span></li>
+            <li><code class="ds-code">3</code><span class="ds-muted">Проверить мобильные версии contacts.html и collections/*.html</span></li>
+          </ul>
+        </article>
+      </div>
+
     </section>
 
   </main>
