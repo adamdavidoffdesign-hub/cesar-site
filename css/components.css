@@ -1043,10 +1043,6 @@
   gap: var(--space-md);
 }
 
-.tangram-page__inner {
-  border-top: none;
-}
-
 .about-page__section {
   display: grid;
   grid-template-columns: 598px minmax(0, 1fr);
@@ -1383,7 +1379,6 @@
   gap: var(--space-sm);
   align-items: start;
   padding-top: var(--stack-xs);
-  border-top: var(--border-hairline) solid var(--c-black);
 }
 
 .collection-page__header-title {
