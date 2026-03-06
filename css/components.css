@@ -1049,7 +1049,6 @@
   gap: 8px;
   align-items: start;
   padding-top: var(--stack-xs);
-  border-top: var(--border-hairline) solid var(--c-black);
 }
 
 .about-page__section--fixed-cols {
