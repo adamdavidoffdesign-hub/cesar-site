@@ -1043,6 +1043,10 @@
   gap: var(--space-md);
 }
 
+.tangram-page__inner {
+  border-top: none;
+}
+
 .about-page__section {
   display: grid;
   grid-template-columns: 598px minmax(0, 1fr);
