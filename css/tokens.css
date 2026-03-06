@@ -164,6 +164,11 @@
   color: var(--c-black);
 }
 
+.t-body p + p,
+.t-body-m p + p {
+  margin-top: 8px;
+}
+
 .t-label,
 .t-body-s {
   font-family: var(--ff-manrope);
