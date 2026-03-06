@@ -39,7 +39,12 @@
   }
 
   body.page-template.page-tangram {
-    background-color: var(--c-white);
+    background-color: #fff;
+  }
+
+  body.page-template.page-tangram .page-template__main,
+  body.page-template.page-tangram .collection-page {
+    background-color: #fff;
   }
 
   .page-template__main {
