@@ -1419,8 +1419,8 @@
 /* rich block: small image + text side by side */
 .collection-page__rich-block {
   display: grid;
-  grid-template-columns: 168px minmax(0, 1fr);
-  gap: var(--space-xs);
+  grid-template-columns: 598px 598px;
+  gap: 4px;
   align-items: start;
 }
 
@@ -1439,6 +1439,7 @@
 
 .collection-page__rich-text {
   margin: 0;
+  max-width: 598px;
 }
 
 /* image grids */
