@@ -1383,6 +1383,7 @@
   gap: var(--space-sm);
   align-items: start;
   padding-top: var(--stack-xs);
+  border-top: var(--border-hairline) solid var(--c-black);
 }
 
 .collection-page__header-title {
