@@ -1214,6 +1214,11 @@
   max-width: 297px;
 }
 
+.about-page__process-lead {
+  display: block;
+  margin-bottom: 10px;
+}
+
 /* ===== contacts page ===== */
 .contacts-page,
 .contacts-page__intro,
