@@ -1548,6 +1548,10 @@
   align-items: center;
   width: fit-content;
   margin-top: 0;
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  line-height: var(--type-body-line);
+  letter-spacing: var(--type-body-spacing);
   padding-bottom: 4px;
   border-bottom: var(--border-hairline) solid var(--c-black);
 }
