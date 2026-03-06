@@ -1365,7 +1365,6 @@
 
 /* ===== collection page (catalog) ===== */
 .collection-page__inner {
-  border-top: none;
   padding-top: var(--section-space);
   padding-bottom: var(--section-space);
   display: flex;
