@@ -38,6 +38,10 @@
     background-color: var(--c-white);
   }
 
+  body.page-template.page-tangram {
+    background-color: var(--c-white);
+  }
+
   .page-template__main {
     min-height: 100vh;
     padding-top: calc(var(--section-space) + var(--stack-lg) + var(--space-sm));
