@@ -1393,6 +1393,10 @@
   margin: 0;
 }
 
+.collection-page__header-text p + p {
+  margin-top: var(--space-xs);
+}
+
 .collection-page__gallery {
   display: flex;
   flex-direction: column;
@@ -1403,7 +1407,7 @@
 .collection-page__img-hero {
   overflow: hidden;
   border-radius: var(--radius-sm);
-  height: 600px;
+  height: 620px;
 }
 
 .collection-page__img-hero img {
@@ -1481,6 +1485,10 @@
 
 .collection-page__text-cell-body {
   margin: 0;
+}
+
+.collection-page__text-cell-body + .collection-page__text-cell-body {
+  margin-top: var(--space-xs);
 }
 
 @media (max-width: 768px) {
