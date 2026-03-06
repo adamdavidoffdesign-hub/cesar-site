@@ -1,0 +1,81 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "WorkTimerNative-arm64-apple-macosx26.0-debug.exe": ["<WorkTimerNative-arm64-apple-macosx26.0-debug.exe>"]
+  "WorkTimerNative-arm64-apple-macosx26.0-debug.module": ["<WorkTimerNative-arm64-apple-macosx26.0-debug.module>"]
+  "main": ["<WorkTimerNative-arm64-apple-macosx26.0-debug.exe>","<WorkTimerNative-arm64-apple-macosx26.0-debug.module>"]
+  "test": ["<WorkTimerNative-arm64-apple-macosx26.0-debug.exe>","<WorkTimerNative-arm64-apple-macosx26.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative":
+    is-mutated: true
+commands:
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative-entitlement.plist"]
+    description: "Write auxiliary file /Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative-entitlement.plist"
+
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/AppDelegate.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/FloatingPanelController.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/MenuBarContentView.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/SettingsView.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/WidgetPanelView.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/WorkTimerNativeApp.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/WorkTimerStore.swift"]
+    outputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/sources"]
+    description: "Write auxiliary file /Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/sources"
+
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/AppDelegate.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/FloatingPanelController.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/MenuBarContentView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/SettingsView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WidgetPanelView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerNativeApp.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerStore.swift.o"]
+    outputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.product/Objects.LinkFileList"
+
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<WorkTimerNative-arm64-apple-macosx26.0-debug.exe>":
+    tool: phony
+    inputs: ["<WorkTimerNative-arm64-apple-macosx26.0-debug.exe-CodeSigning>"]
+    outputs: ["<WorkTimerNative-arm64-apple-macosx26.0-debug.exe>"]
+
+  "<WorkTimerNative-arm64-apple-macosx26.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/AppDelegate.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/FloatingPanelController.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/MenuBarContentView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/SettingsView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WidgetPanelView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerNativeApp.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerStore.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/Modules/WorkTimerNative.swiftmodule"]
+    outputs: ["<WorkTimerNative-arm64-apple-macosx26.0-debug.module>"]
+
+  "C.WorkTimerNative-arm64-apple-macosx26.0-debug.exe":
+    tool: shell
+    inputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/AppDelegate.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/FloatingPanelController.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/MenuBarContentView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/SettingsView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WidgetPanelView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerNativeApp.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerStore.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.product/Objects.LinkFileList"]
+    outputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/WorkTimerNative"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug","-o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative","-module-name","WorkTimerNative","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-alias","-Xlinker","_WorkTimerNative_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx14.0","-Xlinker","-add_ast_path","-Xlinker","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/Modules/WorkTimerNative.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.WorkTimerNative-arm64-apple-macosx26.0-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative-entitlement.plist"]
+    outputs: ["<WorkTimerNative-arm64-apple-macosx26.0-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/WorkTimerNative"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative-entitlement.plist","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative"]
+
+  "C.WorkTimerNative-arm64-apple-macosx26.0-debug.module":
+    tool: shell
+    inputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/AppDelegate.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/FloatingPanelController.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/MenuBarContentView.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/SettingsView.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/WidgetPanelView.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/WorkTimerNativeApp.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/WorkTimerStore.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/sources"]
+    outputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/AppDelegate.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/FloatingPanelController.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/MenuBarContentView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/SettingsView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WidgetPanelView.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerNativeApp.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerStore.swift.o","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/Modules/WorkTimerNative.swiftmodule"]
+    description: "Compiling Swift Module 'WorkTimerNative' (7 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","WorkTimerNative","-emit-dependencies","-emit-module","-emit-module-path","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/Modules/WorkTimerNative.swiftmodule","-output-file-map","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/output-file-map.json","-incremental","-c","@/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/sources","-I","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx14.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","WorkTimerNative_main","-swift-version","6","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","worktimernative"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Package.swift","/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

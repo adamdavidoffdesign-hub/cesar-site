@@ -1,0 +1,54 @@
+{
+  "": {
+    "swift-dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/master.swiftdeps"
+  },
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/AppDelegate.swift": {
+    "dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/AppDelegate.d",
+    "object": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/AppDelegate.swift.o",
+    "swiftmodule": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/AppDelegate~partial.swiftmodule",
+    "swift-dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/AppDelegate.swiftdeps",
+    "diagnostics": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/AppDelegate.dia"
+  },
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/FloatingPanelController.swift": {
+    "dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/FloatingPanelController.d",
+    "object": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/FloatingPanelController.swift.o",
+    "swiftmodule": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/FloatingPanelController~partial.swiftmodule",
+    "swift-dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/FloatingPanelController.swiftdeps",
+    "diagnostics": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/FloatingPanelController.dia"
+  },
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/MenuBarContentView.swift": {
+    "dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/MenuBarContentView.d",
+    "object": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/MenuBarContentView.swift.o",
+    "swiftmodule": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/MenuBarContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/MenuBarContentView.swiftdeps",
+    "diagnostics": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/MenuBarContentView.dia"
+  },
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/SettingsView.swift": {
+    "dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/SettingsView.d",
+    "object": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/SettingsView.swift.o",
+    "swiftmodule": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/SettingsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/SettingsView.swiftdeps",
+    "diagnostics": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/SettingsView.dia"
+  },
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/WidgetPanelView.swift": {
+    "dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WidgetPanelView.d",
+    "object": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WidgetPanelView.swift.o",
+    "swiftmodule": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WidgetPanelView~partial.swiftmodule",
+    "swift-dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WidgetPanelView.swiftdeps",
+    "diagnostics": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WidgetPanelView.dia"
+  },
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/WorkTimerNativeApp.swift": {
+    "dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerNativeApp.d",
+    "object": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerNativeApp.swift.o",
+    "swiftmodule": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerNativeApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerNativeApp.swiftdeps",
+    "diagnostics": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerNativeApp.dia"
+  },
+  "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/Sources/WorkTimerNative/WorkTimerStore.swift": {
+    "dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerStore.d",
+    "object": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerStore.swift.o",
+    "swiftmodule": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerStore.swiftdeps",
+    "diagnostics": "/Users/khanboltaev/Documents/cesar-site/WorkTimerNative/.build/arm64-apple-macosx/debug/WorkTimerNative.build/WorkTimerStore.dia"
+  }
+}
