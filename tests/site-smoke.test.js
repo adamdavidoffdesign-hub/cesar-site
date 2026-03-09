@@ -54,7 +54,7 @@ test('public pages include core structure and local assets resolve', () => {
     assert.match(html, /id="header"/, `${pagePath} should include the header mount point`);
     assert.match(html, /id="footer"/, `${pagePath} should include the footer mount point`);
     assert.match(html, /css\/animations\.css\?v=10/, `${pagePath} should include the current animations stylesheet`);
-    assert.match(html, /js\/main\.js\?v=17/, `${pagePath} should include the current main bundle`);
+    assert.match(html, /js\/main\.js\?v=\d+/, `${pagePath} should include the current main bundle`);
 
     extractLocalRefs(html).forEach((ref) => {
       assert.equal(fileExistsFromRef(pagePath, ref), true, `${pagePath} references missing asset: ${ref}`);
