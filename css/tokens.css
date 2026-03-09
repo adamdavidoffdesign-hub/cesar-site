@@ -128,6 +128,9 @@
   --motion-duration-surface: 360ms;
   --motion-duration-panel: 520ms;
 
+  /* opacity tokens */
+  --opacity-subtle: 0.35;
+
   /* text rhythm tokens */
   --text-line-relaxed: 1.6;
   --text-gap-inline: 0.5em;

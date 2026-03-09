@@ -246,6 +246,14 @@ function initHeader() {
   }
 
   function syncHeaderTheme() {
+    var isMobileMenuOpen = mobileMenu && mobileMenu.classList.contains('open');
+
+    // when mobile menu is open, always use light theme (white on dark overlay)
+    if (isMobileMenuOpen) {
+      setHeaderTheme('light');
+      return;
+    }
+
     var currentScrollY = window.scrollY;
     var headerHeight = header.offsetHeight || 0;
 
