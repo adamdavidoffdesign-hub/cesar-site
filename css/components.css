@@ -389,8 +389,24 @@
     color: var(--c-white);
   }
 
+  .header--light .header__mobile-links a,
+  .header--light .header__mobile-links a:link,
+  .header--light .header__mobile-links a:visited,
+  .header--light .header__mobile-links a:hover,
+  .header--light .header__mobile-links a:active {
+    color: var(--c-white);
+  }
+
   .header--dark .header__mobile-menu,
   .header--dark .menu-nav-bar__mobile {
+    color: var(--c-black);
+  }
+
+  .header--dark .header__mobile-links a,
+  .header--dark .header__mobile-links a:link,
+  .header--dark .header__mobile-links a:visited,
+  .header--dark .header__mobile-links a:hover,
+  .header--dark .header__mobile-links a:active {
     color: var(--c-black);
   }
 
