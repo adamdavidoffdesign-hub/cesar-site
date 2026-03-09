@@ -84,49 +84,75 @@
               <h2 id="modal-title">Редактирование коллекции</h2>
               <button class="modal__close" onclick="app.closeModal()">&times;</button>
             </div>
+
+            <!-- Tabs -->
+            <div class="modal-tabs">
+              <button class="modal-tab active" data-tab="basic" onclick="app.switchModalTab('basic')">Основное</button>
+              <button class="modal-tab" data-tab="page" onclick="app.switchModalTab('page')">Страница коллекции</button>
+            </div>
+
             <form id="collection-form" class="modal__form">
               <input type="hidden" id="col-id" name="id">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="col-name">Название</label>
-                  <input type="text" id="col-name" name="name" required>
+
+              <!-- Tab: Basic -->
+              <div class="tab-panel active" id="tab-basic">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="col-name">Название</label>
+                    <input type="text" id="col-name" name="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="col-slug">Slug (URL)</label>
+                    <input type="text" id="col-slug" name="slug" required pattern="[a-z0-9\-]+">
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="col-slug">Slug (URL)</label>
-                  <input type="text" id="col-slug" name="slug" required pattern="[a-z0-9\-]+">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="col-designer">Дизайнер</label>
-                <input type="text" id="col-designer" name="designer">
-              </div>
-              <div class="form-group">
-                <label>Описание (каждый абзац на новой строке)</label>
-                <textarea id="col-desc" name="description" rows="5"></textarea>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="col-order">Порядок</label>
-                  <input type="number" id="col-order" name="sort_order" value="0">
+                  <label for="col-designer">Дизайнер</label>
+                  <input type="text" id="col-designer" name="designer">
                 </div>
                 <div class="form-group">
-                  <label class="checkbox-label">
-                    <input type="checkbox" id="col-published" name="is_published" checked>
-                    Опубликовано
-                  </label>
+                  <label>Описание (каждый абзац на новой строке)</label>
+                  <textarea id="col-desc" name="description" rows="5"></textarea>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="col-order">Порядок</label>
+                    <input type="number" id="col-order" name="sort_order" value="0">
+                  </div>
+                  <div class="form-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="col-published" name="is_published" checked>
+                      Опубликовано
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Изображения карточки</label>
+                  <div id="col-images" class="image-list"></div>
+                  <div class="image-upload-area" id="image-upload-area">
+                    <input type="file" id="col-image-upload" accept="image/*" multiple hidden>
+                    <button type="button" class="btn" onclick="document.getElementById('col-image-upload').click()">
+                      Загрузить изображения
+                    </button>
+                    <span class="upload-hint">или перетащите файлы сюда</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label>Изображения карточки</label>
-                <div id="col-images" class="image-list"></div>
-                <div class="image-upload-area" id="image-upload-area">
-                  <input type="file" id="col-image-upload" accept="image/*" multiple hidden>
-                  <button type="button" class="btn" onclick="document.getElementById('col-image-upload').click()">
-                    Загрузить изображения
-                  </button>
-                  <span class="upload-hint">или перетащите файлы сюда</span>
+              <!-- Tab: Page content (block editor) -->
+              <div class="tab-panel" id="tab-page">
+                <div class="block-editor-header">
+                  <p class="block-editor-hint">Блоки отображаются на странице коллекции в указанном порядке.</p>
+                  <div class="block-add-btns">
+                    <button type="button" class="btn btn--small" onclick="app.addBlock('hero')">+ Герой</button>
+                    <button type="button" class="btn btn--small" onclick="app.addBlock('rich_block')">+ Текст+фото</button>
+                    <button type="button" class="btn btn--small" onclick="app.addBlock('text_image')">+ Заголовок+фото</button>
+                    <button type="button" class="btn btn--small" onclick="app.addBlock('img_grid', '3-left')">+ Сетка 3-лев</button>
+                    <button type="button" class="btn btn--small" onclick="app.addBlock('img_grid', '3-right')">+ Сетка 3-пр</button>
+                  </div>
                 </div>
+                <div id="block-list" class="block-list"></div>
               </div>
 
               <div class="modal__actions">
@@ -161,6 +187,18 @@
         <div id="media-grid" class="media-grid"></div>
       </section>
     </main>
+  </div>
+
+  <!-- Media picker modal -->
+  <div id="media-picker" class="media-picker" hidden>
+    <div class="media-picker__backdrop" onclick="app.closeMediaPicker()"></div>
+    <div class="media-picker__body">
+      <div class="media-picker__header">
+        <h3>Выбрать изображение</h3>
+        <button class="modal__close" onclick="app.closeMediaPicker()">&times;</button>
+      </div>
+      <div id="media-picker-grid" class="media-picker__grid"></div>
+    </div>
   </div>
 
   <!-- Toast notifications -->

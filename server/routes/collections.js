@@ -22,6 +22,7 @@ router.get('/', (req, res) => {
   const result = collections.map(c => ({
     ...c,
     description: JSON.parse(c.description || '[]'),
+    page_content: JSON.parse(c.page_content || '[]'),
     images: (imagesByCollection[c.id] || []).filter(i => i.image_type === 'card').map(i => i.image_path),
     catalogImages: (imagesByCollection[c.id] || []).filter(i => i.image_type === 'catalog').map(i => ({
       id: i.id,
@@ -45,6 +46,7 @@ router.get('/:slug', (req, res) => {
   res.json({
     ...collection,
     description: JSON.parse(collection.description || '[]'),
+    page_content: JSON.parse(collection.page_content || '[]'),
     images: images.filter(i => i.image_type === 'card').map(i => i.image_path),
     catalogImages: images.filter(i => i.image_type === 'catalog').map(i => ({
       id: i.id,
@@ -58,13 +60,13 @@ router.get('/:slug', (req, res) => {
 // Admin: create collection
 router.post('/', requireAuth, (req, res) => {
   const db = getDb();
-  const { slug, name, designer, description, sort_order, is_published } = req.body;
+  const { slug, name, designer, description, page_content, sort_order, is_published } = req.body;
   if (!slug || !name) return res.status(400).json({ error: 'slug and name required' });
 
   try {
     const result = db.prepare(
-      'INSERT INTO collections (slug, name, designer, description, sort_order, is_published) VALUES (?, ?, ?, ?, ?, ?)'
-    ).run(slug, name, designer || '', JSON.stringify(description || []), sort_order || 0, is_published !== undefined ? is_published : 1);
+      'INSERT INTO collections (slug, name, designer, description, page_content, sort_order, is_published) VALUES (?, ?, ?, ?, ?, ?, ?)'
+    ).run(slug, name, designer || '', JSON.stringify(description || []), JSON.stringify(page_content || []), sort_order || 0, is_published !== undefined ? is_published : 1);
 
     res.json({ ok: true, id: result.lastInsertRowid });
   } catch (e) {
@@ -75,7 +77,7 @@ router.post('/', requireAuth, (req, res) => {
 // Admin: update collection
 router.put('/:id', requireAuth, (req, res) => {
   const db = getDb();
-  const { name, designer, description, sort_order, is_published, slug } = req.body;
+  const { name, designer, description, page_content, sort_order, is_published, slug } = req.body;
   const id = parseInt(req.params.id);
 
   const existing = db.prepare('SELECT * FROM collections WHERE id = ?').get(id);
@@ -83,13 +85,14 @@ router.put('/:id', requireAuth, (req, res) => {
 
   db.prepare(`
     UPDATE collections SET
-      name = ?, designer = ?, description = ?, sort_order = ?, is_published = ?, slug = ?,
+      name = ?, designer = ?, description = ?, page_content = ?, sort_order = ?, is_published = ?, slug = ?,
       updated_at = CURRENT_TIMESTAMP
     WHERE id = ?
   `).run(
     name || existing.name,
     designer !== undefined ? designer : existing.designer,
     description !== undefined ? JSON.stringify(description) : existing.description,
+    page_content !== undefined ? JSON.stringify(page_content) : existing.page_content,
     sort_order !== undefined ? sort_order : existing.sort_order,
     is_published !== undefined ? is_published : existing.is_published,
     slug || existing.slug,
