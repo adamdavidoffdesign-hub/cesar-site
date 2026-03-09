@@ -1,7 +1,9 @@
-/* ===== motion tokens ===== */
+/* ===== motion tokens (easing + animation durations) ===== */
 :root {
   --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --motion-ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* animation-specific durations (longer than UI transitions in tokens.css) */
   --motion-duration-fast: 220ms;
   --motion-duration-base: 680ms;
   --motion-duration-slow: 900ms;
@@ -57,7 +59,7 @@
 .footer__contacts a,
 .footer__legal a {
   transition:
-    opacity var(--motion-duration-fast) ease,
+    opacity var(--motion-duration-fast) var(--motion-ease-soft),
     transform var(--motion-duration-fast) var(--motion-ease-soft),
     letter-spacing var(--motion-duration-fast) var(--motion-ease-soft);
 }
@@ -83,7 +85,7 @@
 .hero__link::after,
 .about__link::after,
 .system__link::after {
-  transition: transform 280ms var(--motion-ease-soft);
+  transition: transform var(--motion-duration-ui-slow) var(--motion-ease-soft);
 }
 
 .hero__link:hover::after,
@@ -95,7 +97,7 @@
 /* nav spotlight */
 .header__nav:hover a,
 .menu-nav-bar__desktop:hover a {
-  opacity: 0.35;
+  opacity: var(--opacity-subtle);
 }
 
 .header__nav:hover a:hover,
@@ -125,7 +127,7 @@
 /* systems siblings fade */
 .systems__list:has(.system:hover) .system {
   opacity: 0.4;
-  transition: opacity 0.4s ease;
+  transition: opacity var(--motion-duration-surface) var(--motion-ease-soft);
 }
 
 .systems__list:has(.system:hover) .system:hover {
@@ -134,23 +136,23 @@
 
 /* ===== gallery motion ===== */
 .about__preview {
-  transition: transform 520ms var(--motion-ease-out), box-shadow 520ms var(--motion-ease-out);
+  transition: transform var(--motion-duration-panel) var(--motion-ease-out), box-shadow var(--motion-duration-panel) var(--motion-ease-out);
   will-change: transform;
 }
 
 .about__preview img {
   transition:
     transform 640ms var(--motion-ease-out),
-    filter 360ms ease,
-    opacity 360ms ease;
+    filter var(--motion-duration-surface) var(--motion-ease-soft),
+    opacity var(--motion-duration-surface) var(--motion-ease-soft);
   will-change: transform, opacity;
 }
 
 .about__thumb {
   transition:
     transform 320ms var(--motion-ease-out),
-    opacity 320ms ease,
-    filter 360ms ease;
+    opacity 320ms var(--motion-ease-soft),
+    filter var(--motion-duration-surface) var(--motion-ease-soft);
 }
 
 .about__main.reveal {
@@ -247,6 +249,7 @@
   .reveal,
   .reveal.is-visible,
   .hero__link,
+  .hero__link::after,
   .about__link,
   .about__link::after,
   .system__link,
