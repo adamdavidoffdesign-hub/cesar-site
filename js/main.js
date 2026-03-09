@@ -219,12 +219,6 @@ function initHeader() {
   function syncHeaderTheme() {
     var currentScrollY = window.scrollY;
     var headerHeight = header.offsetHeight || 0;
-    var isMobileMenuOpen = mobileMenu && mobileMenu.classList.contains('open');
-
-    if (isMobileMenuOpen) {
-      setHeaderTheme('light');
-      return;
-    }
 
     if (!heroSection) {
       setHeaderTheme('dark');

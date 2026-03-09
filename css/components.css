@@ -377,11 +377,21 @@
     background: var(--c-overlay-strong);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    color: var(--c-white);
+    color: inherit;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: opacity var(--motion-duration-ui-slow) ease, visibility var(--motion-duration-ui-slow) ease;
+  }
+
+  .header--light .header__mobile-menu,
+  .header--light .menu-nav-bar__mobile {
+    color: var(--c-white);
+  }
+
+  .header--dark .header__mobile-menu,
+  .header--dark .menu-nav-bar__mobile {
+    color: var(--c-black);
   }
 
   .header__mobile-links {
