@@ -801,7 +801,7 @@
     }
 
     .header__burger-line {
-      background: var(--c-white);
+      background: currentColor;
     }
 
     .menu-nav-bar {
@@ -1048,6 +1048,7 @@
   grid-template-columns: 598px minmax(0, 1fr);
   gap: 8px;
   align-items: start;
+  border-top: var(--border-hairline) solid var(--c-black);
   padding-top: var(--stack-xs);
 }
 
@@ -1563,6 +1564,15 @@
   .about-page__mosaic,
   .about-page__process-grid {
     gap: var(--space-md);
+  }
+
+  .about-page__process-card,
+  .about-page__process-media {
+    width: 100%;
+  }
+
+  .about-page__process-text {
+    max-width: none;
   }
 
   .contacts-page__inner {
