@@ -4,45 +4,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cesar Studio — Коллекция</title>
+  <title>Cesar Studio — Intarsio</title>
 
-  <!-- подключаем css файлы -->
   <link rel="stylesheet" href="../css/tokens.css?v=6">
-  <link rel="stylesheet" href="../css/base.css?v=2">
+  <link rel="stylesheet" href="../css/base.css?v=4">
   <link rel="stylesheet" href="../css/layout.css?v=4">
-  <link rel="stylesheet" href="../css/components.css?v=46">
+  <link rel="stylesheet" href="../css/components.css?v=58">
   <link rel="stylesheet" href="../css/animations.css?v=10">
 </head>
 
-<body class="page-template">
+<body class="page-template page-intarsio">
 
-  <!-- навигация -->
   <header id="header" class="header"></header>
 
-  <!-- страница коллекции -->
   <main class="page-template__main">
-    <section class="collection-hero" aria-labelledby="collection-hero-title">
-      <div class="container collection-hero__inner">
-        <span class="section-label t-label">Коллекция</span>
-        <h1 id="collection-hero-title" class="collection-hero__title t-display">Коллекция 5</h1>
-      </div>
-    </section>
+    <section class="collection-page" aria-label="Intarsio — описание и фотографии">
+      <div class="container collection-page__inner">
+        <div class="collection-page__header">
+          <p class="collection-page__header-title t-label">Intarsio<br>Design by Garcia Cumini</p>
+          <div class="collection-page__header-text t-label">
+            <p>Intarsio — коллекция, вдохновлённая техникой инкрустации: деревянные дверцы с контрастными вставками создают ритмичный орнамент, который превращает фасад в самостоятельный художественный объект. Название отсылает к итальянской традиции intarsio — искусству вкладного декора из различных пород дерева.</p>
+            <p>Сочетание текстур — тёплого дерева, матового лака и мрамора Verde Guatemala — выстраивает диалог между природным и рукотворным. Каждая комбинация материалов рождает уникальный образ, сохраняя при этом архитектурную строгость системы.</p>
+            <p>Коллекция создана студией Garcia Cumini в русле философии Slow Design: вместо тенденций — вечные решения, вместо эффектных жестов — глубина и точность каждой детали.</p>
+          </div>
+        </div>
 
-    <section class="collection-content" aria-labelledby="collection-content-title">
-      <div class="container collection-content__inner">
-        <h2 id="collection-content-title" class="collection-content__title t-title">Описание коллекции</h2>
-        <div class="collection-content__text t-body">
-          <p>Страница коллекции находится в разработке.</p>
+        <div class="collection-page__gallery">
+          <figure class="collection-page__img-hero">
+            <img src="../images/intarsio/intarsio_1.webp" alt="Кухня Intarsio — деревянные фасады с контрастными вставками" loading="eager" decoding="async">
+          </figure>
+
+          <div class="collection-page__rich-block">
+            <figure class="collection-page__rich-img">
+              <img src="../images/intarsio/intarsio_2.webp" alt="Intarsio — детали инкрустации и материалов" loading="lazy" decoding="async">
+            </figure>
+            <p class="collection-page__rich-text t-body">Отступить от правил — значит произвести наибольшее впечатление. Я люблю симметрию, но не конвенцию. Я ценю порядок, но ищу в нём место для неожиданного. Именно в этом напряжении между структурой и свободой рождается то, что запоминается надолго. Intarsio создана дизайнерами Garcia Cumini — дуэтом, который соединяет испанскую экспрессию и итальянскую школу. Инкрустированный фасад здесь — это не орнамент ради орнамента, а осознанный архитектурный жест: каждый элемент занимает своё место, каждый материал несёт смысл. Кухня, которая не просто функционирует, но рассказывает историю.</p>
+          </div>
+
+          <div class="collection-page__img-grid collection-page__img-grid--text-img">
+            <div class="collection-page__text-cell">
+              <h2 class="collection-page__text-cell-title t-title">Art &amp; Order</h2>
+              <p class="collection-page__text-cell-body t-body">Каждая эмоция, каждая мысль, каждый момент уникальны и требуют своего пространства. Intarsio организует это пространство с точностью и поэзией.</p>
+              <p class="collection-page__text-cell-body t-body">Контраст фактур и ритм инкрустации создают интерьер, в котором красота и функция существуют как единое целое.</p>
+            </div>
+            <figure class="collection-page__img-cell">
+              <img src="../images/intarsio/intarsio_3.webp" alt="Intarsio — кухня с мраморной столешницей и деревянными фасадами" loading="lazy" decoding="async">
+            </figure>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- подвал -->
-  <footer id="footer">
-  </footer>
+  <footer id="footer"></footer>
 
-  <!-- подключаем javascript -->
   <script src="../js/main.js?v=17"></script>
 
 </body>

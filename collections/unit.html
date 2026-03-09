@@ -4,45 +4,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cesar Studio — Коллекция</title>
+  <title>Cesar Studio — Unit</title>
 
-  <!-- подключаем css файлы -->
   <link rel="stylesheet" href="../css/tokens.css?v=6">
-  <link rel="stylesheet" href="../css/base.css?v=2">
+  <link rel="stylesheet" href="../css/base.css?v=4">
   <link rel="stylesheet" href="../css/layout.css?v=4">
-  <link rel="stylesheet" href="../css/components.css?v=46">
+  <link rel="stylesheet" href="../css/components.css?v=58">
   <link rel="stylesheet" href="../css/animations.css?v=10">
 </head>
 
-<body class="page-template">
+<body class="page-template page-unit">
 
-  <!-- навигация -->
   <header id="header" class="header"></header>
 
-  <!-- страница коллекции -->
   <main class="page-template__main">
-    <section class="collection-hero" aria-labelledby="collection-hero-title">
-      <div class="container collection-hero__inner">
-        <span class="section-label t-label">Коллекция</span>
-        <h1 id="collection-hero-title" class="collection-hero__title t-display">Коллекция 3</h1>
-      </div>
-    </section>
+    <section class="collection-page" aria-label="Unit — описание и фотографии">
+      <div class="container collection-page__inner">
+        <div class="collection-page__header">
+          <p class="collection-page__header-title t-label">Unit<br>Design by Garcia Cumini</p>
+          <div class="collection-page__header-text t-label">
+            <p>Unit — кухонный остров нового поколения, построенный на алюминиевой конструктивной раме. Приподнятая над полом структура создаёт ощущение лёгкости и визуально освобождает пространство, превращая кухню в архитектурный объект интерьера.</p>
+            <p>Система Unit Pocket органично соединяет кухню с жилой зоной: раздвижные панели скрывают рабочую поверхность, позволяя пространству свободно перетекать из одной функции в другую. Регулируемые ножки с отделкой Champagne Brass подчёркивают благородство материалов.</p>
+            <p>Широкий выбор отделок — от матового лака до натурального дерева и камня — позволяет адаптировать Unit под любой характер интерьера: от строгого минималистичного до тёплого и фактурного.</p>
+          </div>
+        </div>
 
-    <section class="collection-content" aria-labelledby="collection-content-title">
-      <div class="container collection-content__inner">
-        <h2 id="collection-content-title" class="collection-content__title t-title">Описание коллекции</h2>
-        <div class="collection-content__text t-body">
-          <p>Страница коллекции находится в разработке.</p>
+        <div class="collection-page__gallery">
+          <figure class="collection-page__img-hero">
+            <img src="../images/unit/unit_1.webp" alt="Кухонный остров Unit — приподнятая конструкция на алюминиевой раме" loading="eager" decoding="async">
+          </figure>
+
+          <div class="collection-page__rich-block">
+            <figure class="collection-page__rich-img">
+              <img src="../images/unit/unit_2.webp" alt="Unit — детали конструкции и материалов" loading="lazy" decoding="async">
+            </figure>
+            <p class="collection-page__rich-text t-body">Свобода — самое важное в жизни: свобода меняться, адаптироваться, открывать новые пути. Я учусь слышать себя — это даёт мне смелость идти вперёд, не оглядываясь. Каждое решение я принимаю осознанно, зная, что именно оно ведёт меня туда, где я должен быть. Unit создан дизайнерами Garcia Cumini — студией, в которой итальянская точность встречается со страстью к жизни во всей её полноте. Кухня здесь перестаёт быть только утилитарным объектом: она становится частью архитектуры, языком, на котором пространство разговаривает с человеком. Алюминиевая рама, парящий над полом корпус, материалы с характером — всё это не детали, а принципы, из которых складывается целое.</p>
+          </div>
+
+          <div class="collection-page__img-grid collection-page__img-grid--text-img">
+            <div class="collection-page__text-cell">
+              <h2 class="collection-page__text-cell-title t-title">Home</h2>
+              <p class="collection-page__text-cell-body t-body">В конце любого путешествия мы возвращаемся домой. Unit создаёт это ощущение через материал, свет и пропорции.</p>
+              <p class="collection-page__text-cell-body t-body">Конструктивная логика острова и тщательно подобранные отделки превращают кухню в место, к которому хочется возвращаться снова и снова.</p>
+            </div>
+            <figure class="collection-page__img-cell">
+              <img src="../images/unit/unit_3.webp" alt="Unit — остров в интерьере открытой планировки" loading="lazy" decoding="async">
+            </figure>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- подвал -->
-  <footer id="footer">
-  </footer>
+  <footer id="footer"></footer>
 
-  <!-- подключаем javascript -->
   <script src="../js/main.js?v=17"></script>
 
 </body>
