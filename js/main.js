@@ -1,5 +1,6 @@
 // ===== данные систем (компоненты секции Systems) =====
-var SYSTEMS_DATA = [
+// Fallback данные на случай, если API недоступен (статический деплой)
+var SYSTEMS_DATA_FALLBACK = [
   {
     name: 'Tangram',
     designer: 'Design by Garcia Cumini',
@@ -54,6 +55,34 @@ var SYSTEMS_DATA = [
     link: 'collections/intarsio.html'
   }
 ];
+
+var SYSTEMS_DATA = SYSTEMS_DATA_FALLBACK;
+
+// Загрузка данных из API (с fallback на захардкоженные данные)
+function loadSystemsFromApi() {
+  return fetch('/api/collections')
+    .then(function (res) {
+      if (!res.ok) throw new Error('API error');
+      return res.json();
+    })
+    .then(function (data) {
+      if (data && data.length) {
+        SYSTEMS_DATA = data.map(function (c) {
+          return {
+            name: c.name,
+            designer: c.designer || '',
+            desc: c.description || [],
+            images: c.images || [],
+            link: c.link || ('collections/' + c.slug + '.html')
+          };
+        });
+      }
+    })
+    .catch(function () {
+      // API недоступен — используем fallback данные
+      SYSTEMS_DATA = SYSTEMS_DATA_FALLBACK;
+    });
+}
 
 function createRafScheduler(callback) {
   var rafId = 0;
@@ -557,10 +586,15 @@ function initHeroWordReveal() {
 
 initHeroWordReveal();
 initAboutGallery();
-initSystems(); /* карточки систем — сразу, не ждём загрузки header/footer */
-initCollectionPage();
+
+// Загрузка данных из API, затем инициализация систем
+loadSystemsFromApi().then(function () {
+  initSystems();
+  initCollectionPage();
+  initSystemsBar();
+});
+
 initMailtoForms();
-initSystemsBar();
 loadPartials().then(function () {
   initRevealAnimations();
 });

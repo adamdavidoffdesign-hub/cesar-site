@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cesar Studio — Админ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+  <!-- Login screen -->
+  <div id="login-screen" class="login-screen">
+    <form id="login-form" class="login-form">
+      <div class="login-logo">Cesar Studio</div>
+      <p class="login-subtitle">Панель управления</p>
+      <div class="form-group">
+        <label for="login-user">Логин</label>
+        <input type="text" id="login-user" name="username" required autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="login-pass">Пароль</label>
+        <input type="password" id="login-pass" name="password" required autocomplete="current-password">
+      </div>
+      <div id="login-error" class="form-error" hidden></div>
+      <button type="submit" class="btn btn--primary btn--full">Войти</button>
+    </form>
+  </div>
+
+  <!-- Admin panel -->
+  <div id="admin-panel" class="admin-panel" hidden>
+    <aside class="sidebar">
+      <div class="sidebar__logo">Cesar Studio</div>
+      <nav class="sidebar__nav">
+        <a href="#" class="sidebar__link active" data-section="dashboard">Обзор</a>
+        <a href="#" class="sidebar__link" data-section="collections">Коллекции</a>
+        <a href="#" class="sidebar__link" data-section="settings">Настройки</a>
+        <a href="#" class="sidebar__link" data-section="media">Медиа</a>
+      </nav>
+      <div class="sidebar__footer">
+        <span id="admin-username" class="sidebar__user"></span>
+        <button id="logout-btn" class="btn btn--small">Выйти</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <!-- Dashboard -->
+      <section id="section-dashboard" class="admin-section active">
+        <h1>Обзор</h1>
+        <div class="dashboard-cards">
+          <div class="dash-card">
+            <div class="dash-card__value" id="dash-collections">0</div>
+            <div class="dash-card__label">Коллекций</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__value" id="dash-media">0</div>
+            <div class="dash-card__label">Медиа-файлов</div>
+          </div>
+        </div>
+        <div class="dashboard-quick">
+          <h2>Быстрые действия</h2>
+          <div class="quick-actions">
+            <button class="btn" onclick="app.showSection('collections')">Управление коллекциями</button>
+            <button class="btn" onclick="app.showSection('settings')">Настройки сайта</button>
+            <button class="btn" onclick="app.showSection('media')">Загрузить файл</button>
+            <a href="/" target="_blank" class="btn">Открыть сайт</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Collections -->
+      <section id="section-collections" class="admin-section">
+        <div class="section-header">
+          <h1>Коллекции</h1>
+          <button class="btn btn--primary" id="btn-add-collection">+ Добавить</button>
+        </div>
+        <div id="collections-list" class="collections-list"></div>
+
+        <!-- Collection edit modal -->
+        <div id="collection-modal" class="modal" hidden>
+          <div class="modal__backdrop"></div>
+          <div class="modal__body">
+            <div class="modal__header">
+              <h2 id="modal-title">Редактирование коллекции</h2>
+              <button class="modal__close" onclick="app.closeModal()">&times;</button>
+            </div>
+            <form id="collection-form" class="modal__form">
+              <input type="hidden" id="col-id" name="id">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="col-name">Название</label>
+                  <input type="text" id="col-name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="col-slug">Slug (URL)</label>
+                  <input type="text" id="col-slug" name="slug" required pattern="[a-z0-9\-]+">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="col-designer">Дизайнер</label>
+                <input type="text" id="col-designer" name="designer">
+              </div>
+              <div class="form-group">
+                <label>Описание (каждый абзац на новой строке)</label>
+                <textarea id="col-desc" name="description" rows="5"></textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="col-order">Порядок</label>
+                  <input type="number" id="col-order" name="sort_order" value="0">
+                </div>
+                <div class="form-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="col-published" name="is_published" checked>
+                    Опубликовано
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Изображения карточки</label>
+                <div id="col-images" class="image-list"></div>
+                <div class="image-upload-area" id="image-upload-area">
+                  <input type="file" id="col-image-upload" accept="image/*" multiple hidden>
+                  <button type="button" class="btn" onclick="document.getElementById('col-image-upload').click()">
+                    Загрузить изображения
+                  </button>
+                  <span class="upload-hint">или перетащите файлы сюда</span>
+                </div>
+              </div>
+
+              <div class="modal__actions">
+                <button type="button" class="btn" onclick="app.closeModal()">Отмена</button>
+                <button type="submit" class="btn btn--primary">Сохранить</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Settings -->
+      <section id="section-settings" class="admin-section">
+        <h1>Настройки сайта</h1>
+        <form id="settings-form">
+          <div id="settings-fields"></div>
+          <button type="submit" class="btn btn--primary">Сохранить настройки</button>
+        </form>
+      </section>
+
+      <!-- Media -->
+      <section id="section-media" class="admin-section">
+        <div class="section-header">
+          <h1>Медиа-библиотека</h1>
+          <div>
+            <input type="file" id="media-upload" accept="image/*" multiple hidden>
+            <button class="btn btn--primary" onclick="document.getElementById('media-upload').click()">
+              + Загрузить
+            </button>
+          </div>
+        </div>
+        <div id="media-grid" class="media-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Toast notifications -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="/admin/js/admin.js"></script>
+</body>
+</html>
