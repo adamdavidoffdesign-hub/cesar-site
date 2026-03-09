@@ -1369,7 +1369,7 @@
   padding-bottom: var(--section-space);
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--stack-lg);
 }
 
 .collection-page__header {
@@ -1396,7 +1396,7 @@
 .collection-page__gallery {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--stack-lg);
 }
 
 /* full-width hero image */
@@ -1416,7 +1416,7 @@
 .collection-page__rich-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px;
+  gap: 8px;
   align-items: start;
 }
 
