@@ -4,45 +4,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cesar Studio — Коллекция</title>
+  <title>Cesar Studio — N_Elle</title>
 
-  <!-- подключаем css файлы -->
-  <link rel="stylesheet"href="../css/tokens.css?v=6">
-  <link rel="stylesheet" href="../css/base.css?v=2">
+  <link rel="stylesheet" href="../css/tokens.css?v=6">
+  <link rel="stylesheet" href="../css/base.css?v=4">
   <link rel="stylesheet" href="../css/layout.css?v=4">
-  <link rel="stylesheet" href="../css/components.css?v=46">
+  <link rel="stylesheet" href="../css/components.css?v=58">
   <link rel="stylesheet" href="../css/animations.css?v=10">
 </head>
 
-<body class="page-template">
+<body class="page-template page-n-elle">
 
-  <!-- навигация -->
   <header id="header" class="header"></header>
 
-  <!-- страница коллекции -->
   <main class="page-template__main">
-    <section class="collection-hero" aria-labelledby="collection-hero-title">
-      <div class="container collection-hero__inner">
-        <span class="section-label t-label">Коллекция</span>
-        <h1 id="collection-hero-title" class="collection-hero__title t-display">Коллекция 4</h1>
-      </div>
-    </section>
+    <section class="collection-page" aria-label="N_Elle — описание и фотографии">
+      <div class="container collection-page__inner">
+        <div class="collection-page__header">
+          <p class="collection-page__header-title t-label">N_Elle<br>Design by R&amp;D Cesar</p>
+          <div class="collection-page__header-text t-label">
+            <p>N_Elle — система с дверцами толщиной 2,2 см, скошенными под углом 45° по периметру. Этот приём визуально убирает толщину фасада, создавая ощущение невесомости и подчёркивая чистоту линий в любой компоновке.</p>
+            <p>Система поддерживает различные способы открывания: push-to-open для полностью безручковых решений и системы Inside grip с интегрированным захватом. Оба варианта сохраняют гладкость поверхности и единство плоскости фасада.</p>
+            <p>N_Elle органично сочетается с деревянными шпонами, мраморными столешницами и металлическими вставками — материалами, которые усиливают лаконичность формы, не нарушая её целостности.</p>
+          </div>
+        </div>
 
-    <section class="collection-content" aria-labelledby="collection-content-title">
-      <div class="container collection-content__inner">
-        <h2 id="collection-content-title" class="collection-content__title t-title">Описание коллекции</h2>
-        <div class="collection-content__text t-body">
-          <p>Страница коллекции находится в разработке.</p>
+        <div class="collection-page__gallery">
+          <figure class="collection-page__img-hero">
+            <img src="../images/n-elle/n-elle_1.webp" alt="Кухня N_Elle — ультратонкие фасады со скошенным профилем" loading="eager" decoding="async">
+          </figure>
+
+          <div class="collection-page__rich-block">
+            <figure class="collection-page__rich-img">
+              <img src="../images/n-elle/n-elle_2.webp" alt="N_Elle — детали фасадов и материалов" loading="lazy" decoding="async">
+            </figure>
+            <p class="collection-page__rich-text t-body">Я ищу главное во всём. Научившись быть избирательным, я нашёл новые пространства в своей жизни — свободные от лишнего, наполненные тем, что действительно важно. Это не аскетизм, а осознанность: понимание того, что красота рождается в точности, а не в избыточности. N_Elle создана командой R&D Cesar — внутренним бюро фабрики, которое работает на пересечении инженерной мысли и архитектурного видения. Скошенный профиль под 45° — это не просто деталь: это принципиальное решение, которое меняет восприятие фасада целиком. Пространство, где нет лишнего, становится больше — и как комната, и как возможность.</p>
+          </div>
+
+          <div class="collection-page__img-grid collection-page__img-grid--text-img">
+            <div class="collection-page__text-cell">
+              <h2 class="collection-page__text-cell-title t-title">Essentials</h2>
+              <p class="collection-page__text-cell-body t-body">Когда всё лишнее отброшено, форма говорит сама за себя. N_Elle строится именно на этом принципе.</p>
+              <p class="collection-page__text-cell-body t-body">Ультратонкий фасад и безручковые решения — не компромисс, а намеренный выбор в пользу чистоты и долговременной выразительности.</p>
+            </div>
+            <figure class="collection-page__img-cell">
+              <img src="../images/n-elle/n-elle_3.webp" alt="N_Elle — безручковая кухня с минималистичным фасадом" loading="lazy" decoding="async">
+            </figure>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- подвал -->
-  <footer id="footer">
-  </footer>
+  <footer id="footer"></footer>
 
-  <!-- подключаем javascript -->
   <script src="../js/main.js?v=17"></script>
 
 </body>
