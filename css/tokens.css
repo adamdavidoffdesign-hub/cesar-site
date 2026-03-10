@@ -134,6 +134,7 @@
   /* text rhythm tokens */
   --text-line-relaxed: 1.6;
   --text-gap-inline: 0.5em;
+  --type-paragraph-spacing: 8px;
 }
 
 .t-display,
@@ -167,9 +168,17 @@
   color: var(--c-black);
 }
 
+.t-display p + p,
+.t-h1 p + p,
+.t-title p + p,
+.t-h2 p + p,
 .t-body p + p,
-.t-body-m p + p {
-  margin-top: 8px;
+.t-body-m p + p,
+.t-label p + p,
+.t-body-s p + p,
+.t-caption p + p,
+.t-descript p + p {
+  margin-top: var(--type-paragraph-spacing);
 }
 
 .t-label,
