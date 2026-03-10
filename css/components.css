@@ -543,7 +543,7 @@
 }
 
 .system__desc {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--stack-lg);
 }
 
 .system__desc p {
@@ -1473,6 +1473,7 @@
 }
 
 .collection-page__rich-img {
+  flex-shrink: 0;
   overflow: hidden;
   border-radius: var(--radius-sm);
   width: 168px;
@@ -1487,6 +1488,7 @@
 
 .collection-page__rich-text {
   margin: 0;
+  max-width: var(--content-width-lg);
 }
 
 /* image grids */
