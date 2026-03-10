@@ -807,8 +807,14 @@
 .footer__copy {
   display: flex;
   flex-direction: column;
-  gap: var(--stack-2xs);
+  gap: var(--stack-xs);
   font-style: normal;
+}
+
+/* Copyright uses <p> elements — spacing comes from t-label p+p token (8px).
+   Remove flex gap to avoid double-spacing (flex gap + p+p margin). */
+.footer__copy {
+  gap: 0;
 }
 
 .footer__address p,
