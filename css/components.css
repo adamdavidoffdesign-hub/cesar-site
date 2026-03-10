@@ -2,7 +2,7 @@
 .hero {
   height: 100vh;
   background-color: var(--c-black);
-  background-image: url('../images/main_bg.jpg');
+  background-image: url('../images/main_bg.webp');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -644,7 +644,7 @@
   flex-direction: column;
   gap: var(--cluster-sm);
   border-top: var(--border-hairline) solid var(--c-black);
-  padding-top: var(--stack-xs);
+  padding-top: var(--space-2xs);
 }
 
 .service__name {
@@ -838,7 +838,7 @@
 /* ===== адаптив ===== */
   @media (max-width: 768px) {
     .hero {
-      background-image: url('../images/main_mobile_bg.jpg');
+      background-image: url('../images/main_mobile_bg.webp');
     }
 
     .header__burger-line {
@@ -1232,7 +1232,7 @@
 
 .about-page__process-media {
   position: relative;
-  height: 250px;
+  height: 260px;
   width: 297px;
 }
 
@@ -1285,7 +1285,7 @@
 }
 
 .contacts-page__details {
-  margin-top: var(--space-xl);
+  margin-top: var(--space-md);
 }
 
 .contacts-page__eyebrow {
@@ -1298,7 +1298,7 @@
 }
 
 .contacts-page__subtitle {
-  margin-top: var(--space-xs);
+  margin-top: var(--space-2xs);
   max-width: 380px;
 }
 
@@ -1324,7 +1324,7 @@
 }
 
 .contacts-page__input + .contacts-page__input {
-  margin-top: var(--stack-sm);
+  margin-top: var(--stack-xs);
 }
 
 .contacts-page__input::placeholder {
@@ -1333,7 +1333,7 @@
 }
 
 .contacts-page__submit {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-md);
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
@@ -1367,7 +1367,7 @@
 }
 
 .contacts-page__info-group + .contacts-page__info-group {
-  margin-top: var(--space-md);
+  margin-top: var(--space-sm);
 }
 
 .contacts-page__info-label {
@@ -1443,14 +1443,14 @@
 .collection-page__gallery {
   display: flex;
   flex-direction: column;
-  gap: var(--stack-xl);
+  gap: var(--stack-lg);
 }
 
 /* full-width hero image */
 .collection-page__img-hero {
   overflow: hidden;
   border-radius: var(--radius-sm);
-  height: 620px;
+  height: 680px;
 }
 
 .collection-page__img-hero img {
@@ -1459,12 +1459,11 @@
   object-fit: cover;
 }
 
-/* rich block: small image + text side by side */
+/* rich block: small image + text side by side, justified apart */
 .collection-page__rich-block {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-sm);
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .collection-page__rich-img {
