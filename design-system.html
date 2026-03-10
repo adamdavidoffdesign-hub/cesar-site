@@ -531,7 +531,7 @@
         <div class="ds-preview__canvas">
           <div class="ds-about-demo">
             <div class="about__main">
-              <h2 class="about__brand">CESAR Студия</h2>
+              <h2 class="about__brand">CESAR Studio</h2>
               <div class="about__content">
                 <h3 class="about__headline">Официальный дилер фабрики<br>Cesar в России.</h3>
                 <div class="about__text">
@@ -594,6 +594,46 @@
         </div>
       </article>
 
+      <!-- Collection page -->
+      <article class="ds-preview" id="ds-org-collection">
+        <div class="ds-preview__meta">
+          <span class="ds-kicker">Collection page</span>
+          <code class="ds-code">.collection-page__inner · .collection-page__header · .collection-page__gallery · .collection-page__img-hero · .collection-page__rich-block · .collection-page__img-grid--3-left · .collection-page__img-grid--3-right · .collection-page__img-grid--text-img · .collection-page__img-cell · .collection-page__rich-img · .collection-page__text-cell</code>
+        </div>
+        <div class="ds-preview__canvas">
+          <div style="display:flex;flex-direction:column;gap:8px;background:var(--c-white);padding:16px;border-radius:4px;">
+            <!-- header -->
+            <div class="collection-page__header" style="margin-bottom:8px;">
+              <p class="collection-page__header-title t-title">Tangram / Design by García Cumini</p>
+              <p class="collection-page__header-text t-body">Модульная кухонная система с плавными органическими линиями, вдохновлёнными японской головоломкой.</p>
+            </div>
+            <!-- img hero placeholder -->
+            <div class="collection-page__img-hero" style="height:120px;background:var(--c-smoke);display:flex;align-items:center;justify-content:center;">
+              <span class="t-label" style="color:var(--c-gray)">hero · 680px</span>
+            </div>
+            <!-- rich block -->
+            <div class="collection-page__rich-block" style="margin-top:4px;">
+              <div class="collection-page__rich-img" style="width:80px;height:80px;background:var(--c-smoke);display:flex;align-items:center;justify-content:center;">
+                <span class="t-label" style="color:var(--c-gray)">168×168</span>
+              </div>
+              <p class="t-label" style="color:var(--c-gray)">Текстовый блок — описание дизайнера или коллекции.</p>
+            </div>
+            <!-- 3-left grid -->
+            <div class="collection-page__img-grid collection-page__img-grid--3-left" style="height:60px;">
+              <div class="collection-page__img-cell" style="height:60px;background:var(--c-smoke);display:flex;align-items:center;justify-content:center;"><span class="t-label" style="color:var(--c-gray)">2fr</span></div>
+              <div class="collection-page__img-cell" style="height:60px;background:var(--c-smoke);display:flex;align-items:center;justify-content:center;"><span class="t-label" style="color:var(--c-gray)">1fr</span></div>
+              <div class="collection-page__img-cell" style="height:60px;background:var(--c-smoke);display:flex;align-items:center;justify-content:center;"><span class="t-label" style="color:var(--c-gray)">1fr</span></div>
+            </div>
+            <!-- 3-right grid -->
+            <div class="collection-page__img-grid collection-page__img-grid--3-right" style="height:60px;">
+              <div class="collection-page__img-cell" style="height:60px;background:var(--c-smoke);display:flex;align-items:center;justify-content:center;"><span class="t-label" style="color:var(--c-gray)">1fr</span></div>
+              <div class="collection-page__img-cell" style="height:60px;background:var(--c-smoke);display:flex;align-items:center;justify-content:center;"><span class="t-label" style="color:var(--c-gray)">1fr</span></div>
+              <div class="collection-page__img-cell" style="height:60px;background:var(--c-smoke);display:flex;align-items:center;justify-content:center;"><span class="t-label" style="color:var(--c-gray)">2fr</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </section>
 
     <!-- ===== 05 Directory ===== -->
@@ -649,9 +689,9 @@
           <ul class="ds-dir-list">
             <li><code class="ds-code">.page-home</code><span class="ds-muted">homepage</span></li>
             <li><code class="ds-code">.page-template</code><span class="ds-muted">inner</span></li>
-            <li><code class="ds-code">.about-hero</code><span class="ds-muted">about</span></li>
+            <li><code class="ds-code">.about-page</code><span class="ds-muted">about</span></li>
             <li><code class="ds-code">.contacts-page</code><span class="ds-muted">contacts</span></li>
-            <li><code class="ds-code">.collection-hero</code><span class="ds-muted">collection</span></li>
+            <li><code class="ds-code">.collection-page</code><span class="ds-muted">collection</span></li>
             <li><code class="ds-code">.design-system-page</code><span class="ds-muted">this</span></li>
           </ul>
         </article>
@@ -678,11 +718,11 @@
               <li><code class="ds-code">index.html</code><span class="ds-muted">главная — полностью</span></li>
               <li><code class="ds-code">about.html</code><span class="ds-muted">о студии — полностью</span></li>
               <li><code class="ds-code">contacts.html</code><span class="ds-muted">контакты — полностью</span></li>
-              <li><code class="ds-code">collections/tangram.html</code><span class="ds-muted">заглушка</span></li>
-              <li><code class="ds-code">collections/maxima.html</code><span class="ds-muted">заглушка</span></li>
-              <li><code class="ds-code">collections/unit.html</code><span class="ds-muted">заглушка</span></li>
-              <li><code class="ds-code">collections/n-elle.html</code><span class="ds-muted">заглушка</span></li>
-              <li><code class="ds-code">collections/intarsio.html</code><span class="ds-muted">заглушка</span></li>
+              <li><code class="ds-code">collections/tangram.html</code><span class="ds-muted">полный контент (5 блоков)</span></li>
+              <li><code class="ds-code">collections/maxima.html</code><span class="ds-muted">полный контент (5 блоков)</span></li>
+              <li><code class="ds-code">collections/unit.html</code><span class="ds-muted">полный контент (5 блоков)</span></li>
+              <li><code class="ds-code">collections/n-elle.html</code><span class="ds-muted">полный контент (5 блоков)</span></li>
+              <li><code class="ds-code">collections/intarsio.html</code><span class="ds-muted">полный контент (5 блоков)</span></li>
               <li><code class="ds-code">offer.html</code><span class="ds-muted">публичная оферта</span></li>
               <li><code class="ds-code">requisites.html</code><span class="ds-muted">реквизиты</span></li>
             </ul>
@@ -720,7 +760,7 @@
               <li><code class="ds-code">.footer</code><span class="ds-muted">global, desktop + mobile</span></li>
               <li><code class="ds-code">.about-page</code><span class="ds-muted">about.html, все секции</span></li>
               <li><code class="ds-code">.contacts-page</code><span class="ds-muted">contacts.html, все секции</span></li>
-              <li><code class="ds-code">.collection-hero</code><span class="ds-muted">заглушка для коллекций</span></li>
+              <li><code class="ds-code">.collection-page</code><span class="ds-muted">collection page — 5 блоков, все коллекции</span></li>
             </ul>
           </article>
 
@@ -729,9 +769,8 @@
               <span class="ds-kicker">⚠️ Не реализовано</span>
             </header>
             <ul class="ds-dir-list">
-              <li><code class="ds-code">catalog page</code><span class="ds-muted">страница коллекции — полный контент (pencil: 5KPj4)</span></li>
-              <li><code class="ds-code">systems content</code><span class="ds-muted">полные страницы систем Tangram, Maxima, Unit, N_Elle, Intarsio</span></li>
-              <li><code class="ds-code">services content</code><span class="ds-muted">детальный контент услуг (pencil: dFaFk)</span></li>
+              <li><code class="ds-code">services content</code><span class="ds-muted">детальный контент услуг (figma: dFaFk)</span></li>
+              <li><code class="ds-code">—</code><span class="ds-muted">мобильная проверка collection page</span></li>
             </ul>
           </article>
 
@@ -740,43 +779,33 @@
 
       <!-- Pencil frames map -->
       <div class="ds-subsection">
-        <p class="ds-subsection__title">Соответствие фреймов Pencil → HTML</p>
+        <p class="ds-subsection__title">Соответствие фреймов Figma → HTML</p>
         <div class="ds-grid ds-grid--2">
 
           <article class="ds-card">
             <header class="ds-card__head">
-              <span class="ds-kicker">Pencil → Site</span>
+              <span class="ds-kicker">Figma → Site</span>
+              <code class="ds-code">IkskPZq3kDRui6kRZYuFWM</code>
             </header>
             <ul class="ds-dir-list">
-              <li><code class="ds-code">8rZsG desk</code><span class="ds-muted">→ index.html (все секции)</span></li>
-              <li><code class="ds-code">xLvOj about</code><span class="ds-muted">→ about.html</span></li>
-              <li><code class="ds-code">8dTSW main</code><span class="ds-muted">→ .hero в index.html</span></li>
-              <li><code class="ds-code">RSWTi about</code><span class="ds-muted">→ .about в index.html</span></li>
-              <li><code class="ds-code">lGvrR 3_systems</code><span class="ds-muted">→ .systems в index.html</span></li>
-              <li><code class="ds-code">dFaFk services</code><span class="ds-muted">→ .service в index.html</span></li>
-              <li><code class="ds-code">5KPj4 catalog page</code><span class="ds-muted">→ collections/*.html (не реализован)</span></li>
-              <li><code class="ds-code">JcYkC footer desktop</code><span class="ds-muted">→ partials/footer.html</span></li>
-              <li><code class="ds-code">5ZMmY footer mob</code><span class="ds-muted">→ partials/footer.html (mobile)</span></li>
+              <li><code class="ds-code">node-id=157-687</code><span class="ds-muted">→ index.html (Desk)</span></li>
+              <li><code class="ds-code">node-id=213-460</code><span class="ds-muted">→ about.html</span></li>
+              <li><code class="ds-code">node-id=213-478</code><span class="ds-muted">→ contacts.html</span></li>
+              <li><code class="ds-code">node-id=155-505</code><span class="ds-muted">→ collections/*.html (Tangram)</span></li>
             </ul>
           </article>
 
           <article class="ds-card">
             <header class="ds-card__head">
-              <span class="ds-kicker">Pencil UI Kit</span>
-              <code class="ds-code">отдельные компоненты/блоки</code>
+              <span class="ds-kicker">Collection page blocks</span>
+              <code class="ds-code">.collection-page__*</code>
             </header>
             <ul class="ds-dir-list">
-              <li><code class="ds-code">5m6WR link</code><span class="ds-muted">→ .hero__link / .about__link / .system__link</span></li>
-              <li><code class="ds-code">YQ6ea logo</code><span class="ds-muted">→ .brand-logo SVG</span></li>
-              <li><code class="ds-code">0SYhZ nav</code><span class="ds-muted">→ .header__nav / .menu-nav-bar</span></li>
-              <li><code class="ds-code">V6IZ0 menu-icons</code><span class="ds-muted">→ .header__burger</span></li>
-              <li><code class="ds-code">ZqmV3 img_c3</code><span class="ds-muted">→ мозаики в коллекциях</span></li>
-              <li><code class="ds-code">CLFDd text_598x392</code><span class="ds-muted">→ текстовые блоки коллекций</span></li>
-              <li><code class="ds-code">WggeC img_120x600</code><span class="ds-muted">→ полноширокие фото коллекций</span></li>
-              <li><code class="ds-code">T7je2 img_598x392</code><span class="ds-muted">→ img size reference</span></li>
-              <li><code class="ds-code">pO63G img_297x392</code><span class="ds-muted">→ img size reference</span></li>
-              <li><code class="ds-code">Ny6MH img_168x168</code><span class="ds-muted">→ img size reference</span></li>
-              <li><code class="ds-code">BlXLR img 516x280</code><span class="ds-muted">→ img size reference</span></li>
+              <li><code class="ds-code">hero</code><span class="ds-muted">→ .collection-page__img-hero (680px, rounded-sm)</span></li>
+              <li><code class="ds-code">rich_block</code><span class="ds-muted">→ .collection-page__rich-block (168×168 img + text)</span></li>
+              <li><code class="ds-code">img_grid 3-left</code><span class="ds-muted">→ .collection-page__img-grid--3-left (2fr 1fr 1fr)</span></li>
+              <li><code class="ds-code">img_grid 3-right</code><span class="ds-muted">→ .collection-page__img-grid--3-right (1fr 1fr 2fr)</span></li>
+              <li><code class="ds-code">text_image</code><span class="ds-muted">→ .collection-page__img-grid--text-img (text + 598px img)</span></li>
             </ul>
           </article>
 
@@ -791,9 +820,9 @@
             <span class="ds-kicker">Приоритеты</span>
           </header>
           <ul class="ds-dir-list">
-            <li><code class="ds-code">1</code><span class="ds-muted">Реализовать полный контент страниц коллекций (catalog page, pencil: 5KPj4) — 5 страниц</span></li>
-            <li><code class="ds-code">2</code><span class="ds-muted">Добавить reveal-анимации на contacts.html и collections/*.html по образцу главной</span></li>
-            <li><code class="ds-code">3</code><span class="ds-muted">Проверить мобильные версии contacts.html и collections/*.html</span></li>
+            <li><code class="ds-code">1</code><span class="ds-muted">Проверить мобильные версии collections/*.html</span></li>
+            <li><code class="ds-code">2</code><span class="ds-muted">Реализовать детальный контент услуг (figma: dFaFk)</span></li>
+            <li><code class="ds-code">3</code><span class="ds-muted">SEO: meta description, og:image, schema.org для всех страниц</span></li>
           </ul>
         </article>
       </div>
