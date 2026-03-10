@@ -1548,7 +1548,7 @@
   }
 
   .collection-page__rich-block {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: var(--stack-lg);
   }
 
