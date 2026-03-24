@@ -24,6 +24,11 @@ router.get('/', (req, res) => {
     description: JSON.parse(c.description || '[]'),
     page_content: JSON.parse(c.page_content || '[]'),
     images: (imagesByCollection[c.id] || []).filter(i => i.image_type === 'card').map(i => i.image_path),
+    cardImages: (imagesByCollection[c.id] || []).filter(i => i.image_type === 'card').map(i => ({
+      id: i.id,
+      path: i.image_path,
+      alt: i.alt_text
+    })),
     catalogImages: (imagesByCollection[c.id] || []).filter(i => i.image_type === 'catalog').map(i => ({
       id: i.id,
       path: i.image_path,
@@ -48,6 +53,11 @@ router.get('/:slug', (req, res) => {
     description: JSON.parse(collection.description || '[]'),
     page_content: JSON.parse(collection.page_content || '[]'),
     images: images.filter(i => i.image_type === 'card').map(i => i.image_path),
+    cardImages: images.filter(i => i.image_type === 'card').map(i => ({
+      id: i.id,
+      path: i.image_path,
+      alt: i.alt_text
+    })),
     catalogImages: images.filter(i => i.image_type === 'catalog').map(i => ({
       id: i.id,
       path: i.image_path,

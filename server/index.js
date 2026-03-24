@@ -37,6 +37,7 @@ app.use('/api/collections', require('./routes/collections'));
 app.use('/api/pages', require('./routes/pages'));
 app.use('/api/settings', require('./routes/settings'));
 app.use('/api/media', require('./routes/media'));
+app.use('/api/contact', require('./routes/contact'));
 
 // Serve uploaded files
 app.use('/data/uploads', express.static(path.join(__dirname, '..', 'data', 'uploads')));
@@ -49,6 +50,11 @@ app.use(express.static(path.join(__dirname, '..'), {
   index: 'index.html',
   extensions: ['html']
 }));
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, '..', '404.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Cesar Studio server running on http://localhost:${PORT}`);

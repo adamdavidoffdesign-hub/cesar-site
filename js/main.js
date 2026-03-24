@@ -175,6 +175,25 @@ function initCollectionPage() {
   });
 }
 
+function showFormToast(message, isError) {
+  var existing = document.querySelector('.form-toast');
+  if (existing) existing.remove();
+
+  var toast = document.createElement('div');
+  toast.className = 'form-toast' + (isError ? ' form-toast--error' : '');
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(function () {
+    toast.classList.add('form-toast--visible');
+  });
+
+  setTimeout(function () {
+    toast.classList.remove('form-toast--visible');
+    setTimeout(function () { toast.remove(); }, 400);
+  }, 4000);
+}
+
 function initMailtoForms() {
   document.querySelectorAll('[data-mailto-form], .contact-cta__form').forEach(function (form) {
     form.addEventListener('submit', function (event) {
@@ -182,24 +201,37 @@ function initMailtoForms() {
 
       if (!form.reportValidity()) return;
 
-      var recipient = form.getAttribute('data-mailto-recipient') || 'INTERIORTODAY@MAIL.RU';
-      var subject = encodeURIComponent(form.getAttribute('data-mailto-subject') || 'Заявка с сайта Cesar Studio');
-      var fields = [];
+      var btn = form.querySelector('[type="submit"]');
+      var originalText = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Отправляем...'; }
 
+      var data = {};
       form.querySelectorAll('input, textarea, select').forEach(function (field) {
-        var value = field.value.trim();
-        if (!value) return;
-        var label = field.name || field.getAttribute('aria-label') || field.placeholder || 'Поле';
-        fields.push(label + ': ' + value);
+        if (field.name && field.value.trim()) {
+          data[field.name] = field.value.trim();
+        }
       });
 
-      var body = encodeURIComponent([
-        'Новая заявка с сайта Cesar Studio.',
-        '',
-        fields.join('\n')
-      ].join('\n'));
-
-      window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res.ok) {
+          showFormToast('Заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+          form.reset();
+        } else {
+          showFormToast(res.error || 'Ошибка отправки. Позвоните нам напрямую.', true);
+        }
+      })
+      .catch(function () {
+        showFormToast('Ошибка отправки. Позвоните нам напрямую.', true);
+      })
+      .finally(function () {
+        if (btn) { btn.disabled = false; btn.textContent = originalText; }
+      });
     });
   });
 }
