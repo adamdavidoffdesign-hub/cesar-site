@@ -1,6 +1,31 @@
+# Секреты
+.env
+
+# Node
 node_modules/
-data/
+
+# Данные сервера
+data/sessions.db
+data/uploads/
+
+# OS
 .DS_Store
-*.db
-*.db-shm
-*.db-wal
+Thumbs.db
+
+# Другие проекты в этой же папке
+WorkTimerNative/
+
+# Claude
+.claude/settings.local.json
+
+# База данных (не коммитим — инициализируется на сервере)
+data/site.db
+
+# Исходные текстовые файлы коллекций
+images/**/*.txt
+images/**/Снимок.JPG
+
+# Figma
+figma-plugin/
+figma-tokens.json
+figma-variables.json
