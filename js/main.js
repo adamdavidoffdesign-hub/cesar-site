@@ -97,6 +97,26 @@ function createRafScheduler(callback) {
   };
 }
 
+function markActiveNavLink(scope) {
+  var pathname = window.location.pathname;
+  // normalize: remove trailing slash except root
+  var norm = pathname.replace(/\/$/, '') || '/';
+  (scope || document).querySelectorAll('a[data-site-path]').forEach(function (link) {
+    var href = link.getAttribute('href') || '';
+    var isActive = false;
+    if (href === '/' && (norm === '/' || norm === '/index')) {
+      isActive = true;
+    } else if (href.length > 1 && !href.includes('#') && norm === href.replace(/\/$/, '')) {
+      isActive = true;
+    }
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
+
 function resolveSitePaths(root) {
   var scope = root || document;
   var inCollections = (window.location.pathname || '').indexOf('/collections/') !== -1;
@@ -275,6 +295,7 @@ function initHeader() {
   var heroSection = document.getElementById('hero');
   var mobileMenu = document.getElementById('mobile-menu');
   resolveSitePaths(header);
+  markActiveNavLink(header);
 
   // ===== header state + hide on scroll down / show on scroll up =====
   var lastScrollY = window.scrollY;

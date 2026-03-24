@@ -87,7 +87,8 @@
 
   /* component size tokens */
   --logo-width: 112px;
-  --icon-button-size: 34px;
+  --icon-button-size: 44px;
+  --burger-line-width: 24px;
   --burger-line-height: 2px;
   --thumb-width: 95px;
   --thumb-height: 64px;

@@ -21,11 +21,31 @@
   <link rel="preload" as="image" href="images/main_bg.jpg" media="(min-width: 769px)" />
   <link rel="preload" as="image" href="images/main_mobile_bg.jpg" media="(max-width: 768px)" />
 
-  <link rel="stylesheet" href="css/tokens.css?v=6" />
+  <link rel="stylesheet" href="css/tokens.css?v=7" />
   <link rel="stylesheet" href="css/base.css?v=3" />
   <link rel="stylesheet" href="css/layout.css?v=4" />
-  <link rel="stylesheet" href="css/components.css?v=61" />
+  <link rel="stylesheet" href="css/components.css?v=62" />
   <link rel="stylesheet" href="css/animations.css?v=10" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Cesar Studio",
+    "description": "Официальный дилер итальянских кухонь Cesar в России",
+    "url": "https://cesar-studio.ru",
+    "telephone": "+74957557055",
+    "email": "interiortoday@mail.ru",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Нижняя Сыромятническая, дом 11, строение 52",
+      "addressLocality": "Москва",
+      "postalCode": "105120",
+      "addressCountry": "RU"
+    },
+    "openingHours": "Mo-Sa 10:00-19:00",
+    "image": "https://cesar-studio.ru/images/main_bg.jpg"
+  }
+  </script>
 </head>
 
 <body class="page-home">
@@ -167,7 +187,7 @@
 
               <div class="contact-cta__col">
                 <span class="contact-cta__form-label t-body">Узнать стоимость проекта</span>
-                <form class="contact-cta__form" action="mailto:INTERIORTODAY@MAIL.RU" method="post">
+                <form class="contact-cta__form" data-mailto-form>
                   <input type="email" class="contact-cta__input" name="email" placeholder="Email" autocomplete="email" aria-label="Ваш email" required />
                   <button type="submit" class="contact-cta__submit t-label">Отправить <span class="link-arrow">→</span></button>
                 </form>
@@ -183,6 +203,6 @@
 
   <footer id="footer"></footer>
 
-  <script src="js/main.js?v=19"></script>
+  <script src="js/main.js?v=20"></script>
 </body>
 </html>
