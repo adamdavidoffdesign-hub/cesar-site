@@ -164,7 +164,7 @@ const collections = {
     page_content: [
       {
         type: 'hero',
-        image: 'images/n-elle/1.JPG',
+        image: 'images/n-elle/6.JPG',
         alt: 'Кухня N_Elle — ультратонкие фасады со скошенным профилем'
       },
       {
