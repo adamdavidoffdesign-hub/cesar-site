@@ -104,7 +104,12 @@ function resolveSitePaths(root) {
   scope.querySelectorAll('[data-site-path]').forEach(function (link) {
     var sitePath = link.getAttribute('data-site-path');
     if (!sitePath) return;
-    link.setAttribute('href', (inCollections ? '../' : '') + sitePath);
+    // Absolute paths (starting with /) work from any page — no prefix needed
+    if (sitePath.charAt(0) === '/') {
+      link.setAttribute('href', sitePath);
+    } else {
+      link.setAttribute('href', (inCollections ? '../' : '') + sitePath);
+    }
   });
 }
 
