@@ -111,7 +111,7 @@ const COLLECTION_SEED = [
         { src: 'images/tangram/catalog_03.png', alt: 'Tangram — интерьер с композицией цвета терракота' }
       ]}
     ],
-    images: ['images/tangram/tangram_1.webp', 'images/tangram/tangram_2.webp', 'images/tangram/tangram_3.webp']
+    images: ['images/tangram/1.webp', 'images/tangram/2.webp', 'images/tangram/3.webp']
   },
   {
     slug: 'maxima',
@@ -130,7 +130,7 @@ const COLLECTION_SEED = [
         'Богатство материалов и чёткость форм сохраняются в любом масштабе — от компактной городской квартиры до просторного дома с открытой планировкой.'
       ], image: 'images/maxima/maxima_3.webp', alt: 'Maxima 2.2 — модульная компоновка кухни' }
     ],
-    images: ['images/maxima/maxima_1.webp', 'images/maxima/maxima_2.webp', 'images/maxima/maxima_3.webp']
+    images: ['images/maxima/1.webp', 'images/maxima/2.webp', 'images/maxima/3.webp']
   },
   {
     slug: 'unit',
@@ -149,7 +149,7 @@ const COLLECTION_SEED = [
         'Конструктивная логика острова и тщательно подобранные отделки превращают кухню в место, к которому хочется возвращаться снова и снова.'
       ], image: 'images/unit/unit_3.webp', alt: 'Unit — остров в интерьере открытой планировки' }
     ],
-    images: ['images/unit/unit_1.webp', 'images/unit/unit_2.webp', 'images/unit/unit_3.webp']
+    images: ['images/unit/1.webp', 'images/unit/3.webp', 'images/unit/4.webp']
   },
   {
     slug: 'n-elle',
@@ -168,7 +168,7 @@ const COLLECTION_SEED = [
         'Ультратонкий фасад и безручковые решения — не компромисс, а намеренный выбор в пользу чистоты и долговременной выразительности.'
       ], image: 'images/n-elle/n-elle_3.webp', alt: 'N_Elle — безручковая кухня с минималистичным фасадом' }
     ],
-    images: ['images/n-elle/n-elle_1.webp', 'images/n-elle/n-elle_2.webp', 'images/n-elle/n-elle_3.webp']
+    images: ['images/n-elle/1.webp', 'images/n-elle/2.webp', 'images/n-elle/3.webp']
   },
   {
     slug: 'intarsio',
@@ -187,7 +187,7 @@ const COLLECTION_SEED = [
         'Контраст фактур и ритм инкрустации создают интерьер, в котором красота и функция существуют как единое целое.'
       ], image: 'images/intarsio/intarsio_3.webp', alt: 'Intarsio — кухня с мраморной столешницей и деревянными фасадами' }
     ],
-    images: ['images/intarsio/intarsio_1.webp', 'images/intarsio/intarsio_2.webp', 'images/intarsio/intarsio_3.webp']
+    images: ['images/intarsio/10.webp', 'images/intarsio/11.webp', 'images/intarsio/12.webp']
   }
 ];
 
