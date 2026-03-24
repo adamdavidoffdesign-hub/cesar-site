@@ -624,6 +624,84 @@ function initHeroWordReveal() {
   });
 }
 
+// ===== lightbox =====
+function initLightbox() {
+  // Build DOM
+  var lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-modal', 'true');
+  lb.innerHTML =
+    '<button class="lightbox__prev" aria-label="Предыдущее фото">&#8592;</button>' +
+    '<img class="lightbox__img" src="" alt="">' +
+    '<button class="lightbox__next" aria-label="Следующее фото">&#8594;</button>' +
+    '<button class="lightbox__close" aria-label="Закрыть">&#215;</button>';
+  document.body.appendChild(lb);
+
+  var img = lb.querySelector('.lightbox__img');
+  var btnClose = lb.querySelector('.lightbox__close');
+  var btnPrev = lb.querySelector('.lightbox__prev');
+  var btnNext = lb.querySelector('.lightbox__next');
+  var gallery = [];
+  var current = 0;
+
+  function show(index) {
+    current = (index + gallery.length) % gallery.length;
+    img.src = gallery[current].src;
+    img.alt = gallery[current].alt || '';
+    btnPrev.style.display = gallery.length < 2 ? 'none' : '';
+    btnNext.style.display = gallery.length < 2 ? 'none' : '';
+  }
+
+  function open(images, index) {
+    gallery = images;
+    show(index);
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+    img.src = '';
+  }
+
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', function (e) { e.stopPropagation(); show(current - 1); });
+  btnNext.addEventListener('click', function (e) { e.stopPropagation(); show(current + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+
+  // Touch swipe
+  var touchStartX = 0;
+  lb.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) dx < 0 ? show(current + 1) : show(current - 1);
+  });
+
+  // Attach to images with data-lightbox attribute (auto-collect gallery from parent)
+  document.addEventListener('click', function (e) {
+    var target = e.target.closest('[data-lightbox]');
+    if (!target) return;
+    var group = target.getAttribute('data-lightbox-group') || 'default';
+    var all = Array.from(document.querySelectorAll('[data-lightbox-group="' + group + '"]'));
+    if (!all.length) all = [target];
+    var images = all.map(function (el) {
+      var src = el.getAttribute('data-lightbox-src') || el.src || el.getAttribute('src') || '';
+      return { src: src, alt: el.alt || '' };
+    });
+    var index = all.indexOf(target);
+    open(images, index >= 0 ? index : 0);
+  });
+}
+
 initHeroWordReveal();
 initAboutGallery();
 
@@ -635,6 +713,7 @@ loadSystemsFromApi().then(function () {
 });
 
 initMailtoForms();
+initLightbox();
 loadPartials().then(function () {
   initRevealAnimations();
 });

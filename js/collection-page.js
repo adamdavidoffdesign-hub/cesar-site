@@ -32,7 +32,7 @@
       case 'rich_block':
         return `<div class="collection-page__rich-block">
   <figure class="collection-page__rich-img">
-    <img src="${esc(imgSrc(block.image))}" alt="${esc(block.alt)}" loading="${loading}" decoding="async">
+    <img src="${esc(imgSrc(block.image))}" alt="${esc(block.alt)}" loading="${loading}" decoding="async" data-lightbox data-lightbox-group="${esc(slug)}" data-lightbox-src="${esc(imgSrc(block.image))}">
   </figure>
   <p class="collection-page__rich-text t-body">${esc(block.text)}</p>
 </div>`;
@@ -41,7 +41,7 @@
         const layout = block.layout || '3-left';
         const cells = (block.images || []).map(img =>
           `  <figure class="collection-page__img-cell">
-    <img src="${esc(imgSrc(img.src))}" alt="${esc(img.alt)}" loading="${loading}" decoding="async">
+    <img src="${esc(imgSrc(img.src))}" alt="${esc(img.alt)}" loading="${loading}" decoding="async" data-lightbox data-lightbox-group="${esc(slug)}" data-lightbox-src="${esc(imgSrc(img.src))}">
   </figure>`
         ).join('\n');
         return `<div class="collection-page__img-grid collection-page__img-grid--${esc(layout)}">
@@ -59,7 +59,7 @@ ${cells}
 ${paras}
   </div>
   <figure class="collection-page__img-cell">
-    <img src="${esc(imgSrc(block.image))}" alt="${esc(block.alt)}" loading="${loading}" decoding="async">
+    <img src="${esc(imgSrc(block.image))}" alt="${esc(block.alt)}" loading="${loading}" decoding="async" data-lightbox data-lightbox-group="${esc(slug)}" data-lightbox-src="${esc(imgSrc(block.image))}">
   </figure>
 </div>`;
       }
