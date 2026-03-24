@@ -128,6 +128,7 @@ function initSystems() {
 
     var photosEl = card.querySelector('.system__photos');
     photosEl.innerHTML = '';
+    var groupName = 'system-' + item.name.toLowerCase().replace(/\s+/g, '-');
     item.images.forEach(function (src) {
       var div = document.createElement('div');
       div.className = 'system__photo';
@@ -136,6 +137,9 @@ function initSystems() {
       img.alt = item.name;
       img.loading = 'lazy';
       img.decoding = 'async';
+      img.setAttribute('data-lightbox', '');
+      img.setAttribute('data-lightbox-group', groupName);
+      img.setAttribute('data-lightbox-src', src);
       div.appendChild(img);
       photosEl.appendChild(div);
     });

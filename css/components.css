@@ -117,7 +117,6 @@
   font-weight: var(--type-label-weight);
   line-height: var(--type-label-line);
   letter-spacing: var(--type-label-spacing);
-  text-transform: uppercase;
   color: var(--c-black);
 }
 
@@ -606,12 +605,40 @@
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-sm);
   overflow: hidden;
+  position: relative;
+  cursor: zoom-in;
 }
 
 .system__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.system__photo::after {
+  content: 'Смотреть';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.38);
+  color: #fff;
+  font-family: var(--ff-manrope);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.system__photo:hover::after {
+  opacity: 1;
+}
+
+.system__photo:hover img {
+  transform: scale(1.04);
 }
 
 /* ===== service ===== */
