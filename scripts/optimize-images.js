@@ -13,8 +13,8 @@ const fs = require('fs');
 
 const IMAGES_DIR = path.join(__dirname, '..', 'images');
 const MAX_WIDTH = 1920;
-const JPG_QUALITY = 82;
-const WEBP_QUALITY = 80;
+const JPG_QUALITY = 88;
+const WEBP_QUALITY = 88;
 
 let totalSaved = 0;
 let processed = 0;
@@ -56,11 +56,9 @@ async function optimizeFile(filePath) {
       console.log(`= ${path.relative(process.cwd(), filePath)}: уже оптимизирован (${formatSize(statBefore)})`);
     }
 
-    // Create WebP version
+    // Create / update WebP version
     const webpPath = filePath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-    if (!fs.existsSync(webpPath)) {
-      await sharp(filePath).webp({ quality: WEBP_QUALITY }).toFile(webpPath);
-    }
+    await sharp(filePath).webp({ quality: WEBP_QUALITY }).toFile(webpPath);
 
     processed++;
   } catch (err) {
