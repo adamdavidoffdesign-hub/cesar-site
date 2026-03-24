@@ -132,14 +132,14 @@ function initSystems() {
     item.images.forEach(function (src) {
       var div = document.createElement('div');
       div.className = 'system__photo';
+      div.setAttribute('data-lightbox', '');
+      div.setAttribute('data-lightbox-group', groupName);
+      div.setAttribute('data-lightbox-src', src);
       var img = document.createElement('img');
       img.src = src;
       img.alt = item.name;
       img.loading = 'lazy';
       img.decoding = 'async';
-      img.setAttribute('data-lightbox', '');
-      img.setAttribute('data-lightbox-group', groupName);
-      img.setAttribute('data-lightbox-src', src);
       div.appendChild(img);
       photosEl.appendChild(div);
     });
