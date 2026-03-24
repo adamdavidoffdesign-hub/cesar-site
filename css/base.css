@@ -8,7 +8,7 @@
   /* ===== базовые настройки ===== */
   html {
     font-size: 16px;
-    scroll-behavior: smooth;
+    /* scroll-behavior handled via JS to avoid Safari cross-page anchor bug */
   }
   
   body {

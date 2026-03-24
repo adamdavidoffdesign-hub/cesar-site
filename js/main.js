@@ -575,7 +575,7 @@ function loadPartials() {
   }
 
   var headerPromise = headerEl
-    ? fetchPartial(getPartialCandidates('header.html?v=2'), 'Header')
+    ? fetchPartial(getPartialCandidates('header.html?v=3'), 'Header')
         .then(function (html) {
           headerEl.innerHTML = html;
           initHeader();
@@ -711,8 +711,46 @@ function initLightbox() {
   });
 }
 
+// ===== smooth scroll для якорей =====
+function initSmoothScroll() {
+  // При загрузке страницы — прокрутить к якорю из URL (исправляет Safari)
+  var hash = window.location.hash;
+  if (hash) {
+    var target = document.querySelector(hash);
+    if (target) {
+      // небольшая задержка, чтобы страница успела отрисоваться
+      setTimeout(function () {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }
+
+  // Клики по якорным ссылкам той же страницы — smooth scroll
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href');
+    if (!href) return;
+
+    // Только ссылки вида /#section или #section (якорь на этой же странице)
+    var isSamePageAnchor = href.startsWith('#') ||
+      (href.startsWith('/#') && window.location.pathname === '/') ||
+      (href.startsWith('/#') && (href === window.location.pathname + window.location.hash));
+
+    if (href.startsWith('#')) {
+      var el = document.querySelector(href);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.pushState(null, '', href);
+      }
+    }
+  });
+}
+
 initHeroWordReveal();
 initAboutGallery();
+initSmoothScroll();
 
 // Загрузка данных из API, затем инициализация систем
 loadSystemsFromApi().then(function () {
