@@ -1468,6 +1468,26 @@
   text-underline-offset: 0.15em;
 }
 
+.contacts-page__messengers {
+  display: flex;
+  gap: var(--space-s);
+  margin-top: var(--space-2xs);
+}
+
+.contacts-page__messenger-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-sm);
+  color: var(--c-gray);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contacts-page__messenger-link:hover {
+  color: var(--c-black);
+}
+
 .collection-hero__inner {
   padding-top: var(--section-space);
   padding-bottom: var(--section-space);
