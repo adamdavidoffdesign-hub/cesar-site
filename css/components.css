@@ -1470,7 +1470,7 @@
 
 .contacts-page__messengers {
   display: flex;
-  gap: var(--space-m);
+  gap: 32px;
   margin-top: var(--space-2xs);
 }
 
