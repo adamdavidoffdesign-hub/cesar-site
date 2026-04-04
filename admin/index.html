@@ -10,42 +10,20 @@
 </head>
 <body>
   <div id="login-screen" class="login-screen">
-    <div class="login-shell">
-      <section class="login-aside">
-        <span class="eyebrow">Cesar Studio CMS</span>
-        <h1>Управление сайтом, коллекциями и медиатекой в одном интерфейсе.</h1>
-        <p class="login-aside__text">Профессиональная панель для контента, структуры коллекций и ключевых контактных данных сайта.</p>
-        <div class="login-benefits">
-          <div class="login-benefit">
-            <strong>Контроль публикаций</strong>
-            <span>Коллекции, статусы и порядок вывода в одном месте.</span>
-          </div>
-          <div class="login-benefit">
-            <strong>Единая медиатека</strong>
-            <span>Быстрая загрузка файлов и повторное использование изображений.</span>
-          </div>
-          <div class="login-benefit">
-            <strong>Быстрые обновления</strong>
-            <span>Настройки сайта и содержимое коллекций без правки кода.</span>
-          </div>
-        </div>
-      </section>
-
-      <form id="login-form" class="login-form">
-        <div class="login-logo">Cesar Studio</div>
-        <p class="login-subtitle">Панель управления</p>
-        <div class="form-group">
-          <label for="login-user">Логин</label>
-          <input type="text" id="login-user" name="username" required autocomplete="username">
-        </div>
-        <div class="form-group">
-          <label for="login-pass">Пароль</label>
-          <input type="password" id="login-pass" name="password" required autocomplete="current-password">
-        </div>
-        <div id="login-error" class="form-error" hidden></div>
-        <button type="submit" class="btn btn--primary btn--full">Войти в админку</button>
-      </form>
-    </div>
+    <form id="login-form" class="login-card">
+      <div class="login-logo">Cesar Studio</div>
+      <p class="login-subtitle">Панель управления</p>
+      <div class="form-group">
+        <label for="login-user">Логин</label>
+        <input type="text" id="login-user" name="username" required autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="login-pass">Пароль</label>
+        <input type="password" id="login-pass" name="password" required autocomplete="current-password">
+      </div>
+      <div id="login-error" class="form-error" hidden></div>
+      <button type="submit" class="btn btn--primary btn--full">Войти</button>
+    </form>
   </div>
 
   <div id="admin-panel" class="admin-panel" hidden>
@@ -107,7 +85,6 @@
             <div class="panel panel--hero">
               <div class="panel__header panel__header--compact">
                 <div>
-                  <span class="eyebrow">Overview</span>
                   <h2>Состояние контента</h2>
                 </div>
                 <span class="panel__meta" id="dashboard-last-sync">Обновление при открытии панели</span>
@@ -149,7 +126,6 @@
             <div class="panel">
               <div class="section-toolbar">
                 <div class="section-toolbar__copy">
-                  <span class="eyebrow">Collections</span>
                   <h2>Управление коллекциями</h2>
                   <p>Редактирование карточек, порядка, статусов и контента страниц коллекций.</p>
                 </div>
@@ -180,7 +156,6 @@
               <div class="modal__body">
                 <div class="modal__header">
                   <div>
-                    <span class="eyebrow">Collection editor</span>
                     <h2 id="modal-title">Редактирование коллекции</h2>
                   </div>
                   <button class="modal__close" onclick="app.closeModal()">&times;</button>
@@ -268,7 +243,6 @@
             <div class="panel">
               <div class="section-toolbar">
                 <div class="section-toolbar__copy">
-                  <span class="eyebrow">Settings</span>
                   <h2>Настройки сайта</h2>
                   <p>Контактные данные, адрес, часы работы и параметры формы обратной связи.</p>
                 </div>
@@ -288,7 +262,6 @@
             <div class="panel">
               <div class="section-toolbar">
                 <div class="section-toolbar__copy">
-                  <span class="eyebrow">Media</span>
                   <h2>Медиа-библиотека</h2>
                   <p>Хранение изображений, копирование путей и повторное использование ассетов в блоках.</p>
                 </div>
@@ -321,7 +294,6 @@
     <div class="media-picker__body">
       <div class="media-picker__header">
         <div>
-          <span class="eyebrow">Media picker</span>
           <h3>Выбрать изображение</h3>
         </div>
         <button class="modal__close" onclick="app.closeMediaPicker()">&times;</button>
