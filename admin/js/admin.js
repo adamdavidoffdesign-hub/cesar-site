@@ -13,22 +13,11 @@
   };
 
   var PAGE_META = {
-    dashboard: {
-      title: 'Обзор',
-      description: 'Ключевые показатели, статусы коллекций и быстрые переходы по админке.'
-    },
-    collections: {
-      title: 'Коллекции',
-      description: 'Редактирование карточек, статусов публикации и структуры страниц коллекций.'
-    },
-    settings: {
-      title: 'Настройки',
-      description: 'Контакты, адрес, расписание и параметры формы обратной связи.'
-    },
-    media: {
-      title: 'Медиа',
-      description: 'Управление изображениями, путями файлов и повторным использованием ассетов.'
-    }
+    dashboard: { title: 'Обзор' },
+    collections: { title: 'Коллекции' },
+    editor: { title: 'Редактирование коллекции' },
+    settings: { title: 'Настройки' },
+    media: { title: 'Медиафайлы' }
   };
 
   var BLOCK_LABELS = {
@@ -123,7 +112,6 @@
   function updatePageMeta(section) {
     var meta = PAGE_META[section] || PAGE_META.dashboard;
     document.getElementById('page-title').textContent = meta.title;
-    document.getElementById('page-description').textContent = meta.description;
   }
 
   function showSection(name) {
@@ -133,8 +121,10 @@
       section.classList.toggle('active', section.id === 'section-' + name);
     });
 
+    // При редактировании подсвечиваем "Коллекции" в сайдбаре
+    var sidebarTarget = name === 'editor' ? 'collections' : name;
     document.querySelectorAll('.sidebar__link').forEach(function (link) {
-      link.classList.toggle('active', link.getAttribute('data-section') === name);
+      link.classList.toggle('active', link.getAttribute('data-section') === sidebarTarget);
     });
 
     updatePageMeta(name);
@@ -300,7 +290,7 @@
     if (!collection) return;
 
     state.editingCollectionId = id;
-    document.getElementById('modal-title').textContent = 'Редактирование: ' + collection.name;
+    document.getElementById('editor-title').textContent = collection.name;
     document.getElementById('col-id').value = id;
     document.getElementById('col-name').value = collection.name;
     document.getElementById('col-slug').value = collection.slug;
@@ -309,6 +299,17 @@
     document.getElementById('col-order').value = collection.sort_order || 0;
     document.getElementById('col-published').checked = !!collection.is_published;
 
+    // Slug скрываем при редактировании (клиенту не нужно менять URL)
+    var slugGroup = document.getElementById('col-slug-group');
+    if (slugGroup) slugGroup.style.display = 'none';
+
+    // Ссылка "Посмотреть на сайте"
+    var viewLink = document.getElementById('editor-view-link');
+    if (viewLink) {
+      viewLink.href = '/collections/' + collection.slug + '.html';
+      viewLink.hidden = false;
+    }
+
     renderCollectionImages(collection.cardImages || (collection.images || []).map(function (path) {
       return { path: path };
     }));
@@ -316,7 +317,7 @@
     state.pageBlocks = Array.isArray(collection.page_content) ? collection.page_content : [];
     renderBlockList();
     switchModalTab('basic');
-    openModal();
+    showSection('editor');
   }
 
   function renderCollectionImages(images) {
@@ -340,7 +341,7 @@
   function addNewCollection() {
     state.editingCollectionId = null;
     state.pageBlocks = [];
-    document.getElementById('modal-title').textContent = 'Новая коллекция';
+    document.getElementById('editor-title').textContent = 'Новая коллекция';
     document.getElementById('col-id').value = '';
     document.getElementById('col-name').value = '';
     document.getElementById('col-slug').value = '';
@@ -349,14 +350,26 @@
     document.getElementById('col-order').value = state.collections.length;
     document.getElementById('col-published').checked = true;
     document.getElementById('col-images').innerHTML = '';
+
+    // Показываем slug при создании новой
+    var slugGroup = document.getElementById('col-slug-group');
+    if (slugGroup) slugGroup.style.display = '';
+
+    // Скрываем ссылку "Посмотреть на сайте" для новой коллекции
+    var viewLink = document.getElementById('editor-view-link');
+    if (viewLink) viewLink.hidden = true;
+
     renderBlockList();
     switchModalTab('basic');
-    openModal();
+    showSection('editor');
   }
 
   function handleCollectionSubmit(e) {
     e.preventDefault();
     collectBlocksFromDom();
+
+    var saveBtn = document.getElementById('editor-save-btn');
+    if (saveBtn) { saveBtn.disabled = true; saveBtn.textContent = 'Сохраняем...'; }
 
     var description = (document.getElementById('col-desc').value || '')
       .split('\n')
@@ -381,12 +394,12 @@
         toast(data.error || 'Ошибка сохранения', 'error');
         return;
       }
-
       toast('Коллекция сохранена', 'success');
-      closeModal();
-      loadCollections();
+      closeEditor();
     }).catch(function (err) {
       toast('Ошибка: ' + err.message, 'error');
+    }).finally(function () {
+      if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Сохранить изменения'; }
     });
   }
 
@@ -420,16 +433,14 @@
     });
   }
 
-  function openModal() {
-    document.getElementById('collection-modal').hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    document.getElementById('collection-modal').hidden = true;
-    document.body.style.overflow = '';
+  function closeEditor() {
+    showSection('collections');
     closeMediaPicker();
   }
+
+  // Обратная совместимость (вызывается из некоторых мест)
+  function openModal() { showSection('editor'); }
+  function closeModal() { closeEditor(); }
 
   function switchModalTab(tabName) {
     document.querySelectorAll('.modal-tab').forEach(function (btn) {
@@ -1062,7 +1073,6 @@
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
       if (!document.getElementById('media-picker').hidden) closeMediaPicker();
-      else if (!document.getElementById('collection-modal').hidden) closeModal();
     });
   }
 
@@ -1071,6 +1081,7 @@
     editCollection: editCollection,
     deleteCollection: deleteCollection,
     removeCollectionImage: removeCollectionImage,
+    closeEditor: closeEditor,
     closeModal: closeModal,
     switchModalTab: switchModalTab,
     addBlock: addBlock,

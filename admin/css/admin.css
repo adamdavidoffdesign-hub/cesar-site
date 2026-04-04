@@ -219,6 +219,53 @@ h3 { font-size: 0.9rem; font-weight: 700; }
 .input-shell { display: flex; flex-direction: column; gap: 0.4rem; }
 .input-shell--wide { grid-column: 1 / -1; }
 
+.label-hint {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-subtle);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ===== Sidebar icons ===== */
+.sidebar__icon {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.sidebar__link:hover .sidebar__icon,
+.sidebar__link.active .sidebar__icon {
+  opacity: 1;
+}
+
+/* ===== Editor (full-page collection editor) ===== */
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.editor-title-row {
+  margin-bottom: 1rem;
+}
+
+.editor-tabs {
+  margin-bottom: 1.25rem;
+}
+
+.editor-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
 /* ===== Login ===== */
 .login-screen {
   display: flex;

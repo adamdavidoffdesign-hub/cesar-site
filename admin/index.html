@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cesar Studio - Админ</title>
+  <title>Cesar Studio — Панель управления</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/admin/css/admin.css">
 </head>
 <body>
+
+  <!-- Экран входа -->
   <div id="login-screen" class="login-screen">
     <form id="login-form" class="login-card">
       <div class="login-logo">Cesar Studio</div>
@@ -26,68 +28,68 @@
     </form>
   </div>
 
+  <!-- Панель управления -->
   <div id="admin-panel" class="admin-panel" hidden>
+
+    <!-- Боковое меню -->
     <aside class="sidebar">
       <div class="sidebar__brand">
         <span class="sidebar__eyebrow">Cesar Studio</span>
-        <div class="sidebar__logo">Admin Console</div>
+        <div class="sidebar__logo">Управление сайтом</div>
       </div>
 
       <nav class="sidebar__nav">
         <a href="#" class="sidebar__link active" data-section="dashboard">
+          <svg class="sidebar__icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg>
           <span class="sidebar__link-label">Обзор</span>
-          <span class="sidebar__link-hint">Статус контента</span>
         </a>
         <a href="#" class="sidebar__link" data-section="collections">
+          <svg class="sidebar__icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M1.5 3.5A1.5 1.5 0 013 2h10a1.5 1.5 0 011.5 1.5v1A1.5 1.5 0 0113 6H3A1.5 1.5 0 011.5 4.5v-1zm0 5A1.5 1.5 0 013 7h10a1.5 1.5 0 011.5 1.5v1A1.5 1.5 0 0113 11H3A1.5 1.5 0 011.5 9.5v-1zm0 5A1.5 1.5 0 013 12h6a1.5 1.5 0 011.5 1.5v1A1.5 1.5 0 019 16H3A1.5 1.5 0 011.5 14.5v-1z"/></svg>
           <span class="sidebar__link-label">Коллекции</span>
-          <span class="sidebar__link-hint">Структура и публикация</span>
-        </a>
-        <a href="#" class="sidebar__link" data-section="settings">
-          <span class="sidebar__link-label">Настройки</span>
-          <span class="sidebar__link-hint">Контакты и формы</span>
         </a>
         <a href="#" class="sidebar__link" data-section="media">
-          <span class="sidebar__link-label">Медиа</span>
-          <span class="sidebar__link-hint">Изображения и пути</span>
+          <svg class="sidebar__icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M14 2H2a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1V3a1 1 0 00-1-1zm-1 9.5l-2.5-2.5-2 2-2.5-2.5L3 11.5V12h10v-.5zm0-4a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" clip-rule="evenodd"/></svg>
+          <span class="sidebar__link-label">Медиафайлы</span>
+        </a>
+        <a href="#" class="sidebar__link" data-section="settings">
+          <svg class="sidebar__icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4 8a4 4 0 118 0A4 4 0 014 8z" clip-rule="evenodd"/><path d="M6.5 0h3l.5 2a6 6 0 011.4.8l2-.5 1.5 2.6-1.5 1.3c.07.27.1.54.1.8s-.03.53-.1.8L15 9l-1.5 2.6-2-.5A6 6 0 019.5 12l-.5 2h-3l-.5-2a6 6 0 01-1.4-.8l-2 .5L0.5 9l1.5-1.3A5.9 5.9 0 012 7c0-.27.03-.53.1-.8L.5 4.8 2 2.2l2 .5A6 6 0 016.5 2l.5-2z"/></svg>
+          <span class="sidebar__link-label">Настройки</span>
         </a>
       </nav>
 
       <div class="sidebar__footer">
         <div class="sidebar__user-card">
-          <span class="sidebar__user-label">Аккаунт</span>
+          <span class="sidebar__user-label">Вы вошли как</span>
           <span id="admin-username" class="sidebar__user"></span>
         </div>
         <button id="logout-btn" class="btn btn--ghost btn--small">Выйти</button>
       </div>
     </aside>
 
+    <!-- Основная область -->
     <div class="admin-shell">
       <header class="topbar">
         <div class="topbar__context">
-          <span class="eyebrow" id="page-eyebrow">Cesar Studio CMS</span>
-          <div>
-            <h1 id="page-title">Обзор</h1>
-            <p id="page-description" class="page-description">Ключевые показатели, статусы коллекций и быстрые переходы по админке.</p>
-          </div>
+          <h1 id="page-title">Обзор</h1>
         </div>
         <div class="topbar__actions">
-          <a href="/" target="_blank" class="btn btn--ghost">Открыть сайт</a>
+          <a href="/" target="_blank" class="btn btn--ghost btn--small">Открыть сайт ↗</a>
           <div class="topbar__user">
             <span class="topbar__user-label">Онлайн</span>
-            <strong id="topbar-username">admin</strong>
+            <strong id="topbar-username"></strong>
           </div>
         </div>
       </header>
 
       <main class="admin-main">
+
+        <!-- Обзор -->
         <section id="section-dashboard" class="admin-section active">
           <div class="section-stack">
-            <div class="panel panel--hero">
+            <div class="panel">
               <div class="panel__header panel__header--compact">
-                <div>
-                  <h2>Состояние контента</h2>
-                </div>
-                <span class="panel__meta" id="dashboard-last-sync">Обновление при открытии панели</span>
+                <h2>Состояние контента</h2>
+                <span class="panel__meta" id="dashboard-last-sync"></span>
               </div>
               <div class="dashboard-metrics" id="dashboard-metrics"></div>
             </div>
@@ -95,25 +97,19 @@
             <div class="dashboard-grid">
               <div class="panel">
                 <div class="panel__header">
-                  <div>
-                    <h2>Быстрые действия</h2>
-                    <p>Переход к основным задачам редактора.</p>
-                  </div>
+                  <h2>Быстрые действия</h2>
                 </div>
                 <div class="quick-actions">
-                  <button class="btn" onclick="app.showSection('collections')">Управление коллекциями</button>
-                  <button class="btn" onclick="app.showSection('settings')">Настройки сайта</button>
-                  <button class="btn" onclick="app.showSection('media')">Загрузить файл</button>
-                  <a href="/" target="_blank" class="btn btn--ghost">Открыть сайт</a>
+                  <button class="btn" onclick="app.showSection('collections')">Коллекции</button>
+                  <button class="btn" onclick="app.showSection('media')">Загрузить фото</button>
+                  <button class="btn" onclick="app.showSection('settings')">Настройки</button>
+                  <a href="/" target="_blank" class="btn btn--ghost">Открыть сайт ↗</a>
                 </div>
               </div>
 
               <div class="panel">
                 <div class="panel__header">
-                  <div>
-                    <h2>Контент по коллекциям</h2>
-                    <p>Что опубликовано, что в черновике и насколько заполнены страницы.</p>
-                  </div>
+                  <h2>Коллекции</h2>
                 </div>
                 <div id="dashboard-status-list" class="status-list"></div>
               </div>
@@ -121,21 +117,22 @@
           </div>
         </section>
 
+        <!-- Список коллекций -->
         <section id="section-collections" class="admin-section">
           <div class="section-stack">
             <div class="panel">
               <div class="section-toolbar">
                 <div class="section-toolbar__copy">
-                  <h2>Управление коллекциями</h2>
-                  <p>Редактирование карточек, порядка, статусов и контента страниц коллекций.</p>
+                  <h2>Коллекции кухонь</h2>
+                  <p>Название, описание, фотографии и страница каждой коллекции.</p>
                 </div>
-                <button class="btn btn--primary" id="btn-add-collection">Добавить коллекцию</button>
+                <button class="btn btn--primary" id="btn-add-collection">+ Добавить коллекцию</button>
               </div>
 
               <div class="toolbar-grid">
                 <label class="input-shell">
                   <span>Поиск</span>
-                  <input type="search" id="collections-search" placeholder="Название, slug или дизайнер">
+                  <input type="search" id="collections-search" placeholder="Название или дизайнер">
                 </label>
                 <label class="input-shell">
                   <span>Статус</span>
@@ -150,133 +147,152 @@
               <div id="collections-summary" class="inline-stats"></div>
               <div id="collections-list" class="collections-list"></div>
             </div>
-
-            <div id="collection-modal" class="modal" hidden>
-              <div class="modal__backdrop"></div>
-              <div class="modal__body">
-                <div class="modal__header">
-                  <div>
-                    <h2 id="modal-title">Редактирование коллекции</h2>
-                  </div>
-                  <button class="modal__close" onclick="app.closeModal()">&times;</button>
-                </div>
-
-                <div class="modal-tabs">
-                  <button class="modal-tab active" data-tab="basic" onclick="app.switchModalTab('basic')">Основное</button>
-                  <button class="modal-tab" data-tab="page" onclick="app.switchModalTab('page')">Страница коллекции</button>
-                </div>
-
-                <form id="collection-form" class="modal__form">
-                  <input type="hidden" id="col-id" name="id">
-
-                  <div class="tab-panel active" id="tab-basic">
-                    <div class="form-row">
-                      <div class="form-group">
-                        <label for="col-name">Название</label>
-                        <input type="text" id="col-name" name="name" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="col-slug">Slug</label>
-                        <input type="text" id="col-slug" name="slug" required pattern="[a-z0-9\\-]+">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="col-designer">Дизайнер</label>
-                      <input type="text" id="col-designer" name="designer">
-                    </div>
-                    <div class="form-group">
-                      <label for="col-desc">Описание</label>
-                      <textarea id="col-desc" name="description" rows="5" placeholder="Каждый абзац с новой строки"></textarea>
-                    </div>
-                    <div class="form-row form-row--tight">
-                      <div class="form-group">
-                        <label for="col-order">Порядок</label>
-                        <input type="number" id="col-order" name="sort_order" value="0">
-                      </div>
-                      <div class="form-group">
-                        <label class="checkbox-label">
-                          <input type="checkbox" id="col-published" name="is_published" checked>
-                          <span>Опубликовано</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label>Изображения карточки</label>
-                      <div id="col-images" class="image-list"></div>
-                      <div class="image-upload-area" id="image-upload-area">
-                        <input type="file" id="col-image-upload" accept="image/*" multiple hidden>
-                        <button type="button" class="btn" onclick="document.getElementById('col-image-upload').click()">
-                          Загрузить изображения
-                        </button>
-                        <span class="upload-hint">или перетащите файлы сюда</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="tab-panel" id="tab-page">
-                    <div class="block-editor-header">
-                      <p class="block-editor-hint">Соберите страницу коллекции из блоков. Порядок блоков определяет реальный порядок на сайте.</p>
-                      <div class="block-add-btns">
-                        <button type="button" class="btn btn--small" onclick="app.addBlock('hero')">Герой</button>
-                        <button type="button" class="btn btn--small" onclick="app.addBlock('rich_block')">Текст + фото</button>
-                        <button type="button" class="btn btn--small" onclick="app.addBlock('text_image')">Заголовок + фото</button>
-                        <button type="button" class="btn btn--small" onclick="app.addBlock('img_grid', '3-left')">Сетка 3 слева</button>
-                        <button type="button" class="btn btn--small" onclick="app.addBlock('img_grid', '3-right')">Сетка 3 справа</button>
-                      </div>
-                    </div>
-                    <div id="block-list" class="block-list"></div>
-                  </div>
-
-                  <div class="modal__actions">
-                    <button type="button" class="btn btn--ghost" onclick="app.closeModal()">Отмена</button>
-                    <button type="submit" class="btn btn--primary">Сохранить</button>
-                  </div>
-                </form>
-              </div>
-            </div>
           </div>
         </section>
 
-        <section id="section-settings" class="admin-section">
+        <!-- Редактор коллекции (вместо модалки) -->
+        <section id="section-editor" class="admin-section">
           <div class="section-stack">
             <div class="panel">
-              <div class="section-toolbar">
-                <div class="section-toolbar__copy">
-                  <h2>Настройки сайта</h2>
-                  <p>Контактные данные, адрес, часы работы и параметры формы обратной связи.</p>
-                </div>
+
+              <div class="editor-header">
+                <button class="btn btn--ghost btn--small" onclick="app.closeEditor()">← Назад к коллекциям</button>
+                <a id="editor-view-link" href="#" target="_blank" class="btn btn--ghost btn--small" hidden>Посмотреть на сайте ↗</a>
               </div>
-              <form id="settings-form">
-                <div id="settings-fields" class="settings-grid"></div>
-                <div class="form-actions">
-                  <button type="submit" class="btn btn--primary">Сохранить настройки</button>
+
+              <div class="editor-title-row">
+                <h2 id="editor-title">Редактирование коллекции</h2>
+              </div>
+
+              <div class="modal-tabs editor-tabs">
+                <button class="modal-tab active" data-tab="basic" onclick="app.switchModalTab('basic')">Основное</button>
+                <button class="modal-tab" data-tab="page" onclick="app.switchModalTab('page')">Страница коллекции</button>
+              </div>
+
+              <form id="collection-form">
+                <input type="hidden" id="col-id" name="id">
+
+                <!-- Вкладка: Основное -->
+                <div class="tab-panel active" id="tab-basic">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="col-name">Название коллекции</label>
+                      <input type="text" id="col-name" name="name" required placeholder="Например: Tangram">
+                    </div>
+                    <div class="form-group" id="col-slug-group">
+                      <label for="col-slug">URL-адрес (slug)</label>
+                      <input type="text" id="col-slug" name="slug" required pattern="[a-z0-9\-]+" placeholder="tangram">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="col-designer">Дизайнер</label>
+                    <input type="text" id="col-designer" name="designer" placeholder="Design by Garcia Cumini">
+                  </div>
+                  <div class="form-group">
+                    <label for="col-desc">Описание коллекции</label>
+                    <textarea id="col-desc" name="description" rows="5" placeholder="Каждый абзац — с новой строки. Будет показан на главной странице."></textarea>
+                  </div>
+                  <div class="form-row form-row--tight">
+                    <div class="form-group">
+                      <label for="col-order">Порядок вывода</label>
+                      <input type="number" id="col-order" name="sort_order" value="0">
+                    </div>
+                    <div class="form-group">
+                      <label class="checkbox-label">
+                        <input type="checkbox" id="col-published" name="is_published" checked>
+                        <span>Опубликована на сайте</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Фотографии карточки <span class="label-hint">(показываются на главной странице, рекомендуется 3 фото)</span></label>
+                    <div id="col-images" class="image-list"></div>
+                    <div class="image-upload-area" id="image-upload-area">
+                      <input type="file" id="col-image-upload" accept="image/*" multiple hidden>
+                      <button type="button" class="btn" onclick="document.getElementById('col-image-upload').click()">
+                        Загрузить фотографии
+                      </button>
+                      <span class="upload-hint">или перетащите файлы сюда · JPG, PNG, WebP до 10 МБ</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Вкладка: Страница коллекции -->
+                <div class="tab-panel" id="tab-page">
+                  <div class="block-editor-header">
+                    <p class="block-editor-hint">Соберите страницу коллекции из блоков. Порядок блоков — это порядок на сайте.</p>
+                    <div class="block-add-btns">
+                      <button type="button" class="btn btn--small" onclick="app.addBlock('hero')">
+                        Главное фото
+                      </button>
+                      <button type="button" class="btn btn--small" onclick="app.addBlock('rich_block')">
+                        Фото + текст
+                      </button>
+                      <button type="button" class="btn btn--small" onclick="app.addBlock('text_image')">
+                        Заголовок + фото
+                      </button>
+                      <button type="button" class="btn btn--small" onclick="app.addBlock('img_grid', '3-left')">
+                        Галерея (3 фото, большое слева)
+                      </button>
+                      <button type="button" class="btn btn--small" onclick="app.addBlock('img_grid', '3-right')">
+                        Галерея (3 фото, большое справа)
+                      </button>
+                    </div>
+                  </div>
+                  <div id="block-list" class="block-list"></div>
+                </div>
+
+                <div class="editor-actions">
+                  <button type="button" class="btn btn--ghost" onclick="app.closeEditor()">Отмена</button>
+                  <button type="submit" class="btn btn--primary" id="editor-save-btn">Сохранить изменения</button>
                 </div>
               </form>
             </div>
           </div>
         </section>
 
+        <!-- Настройки -->
+        <section id="section-settings" class="admin-section">
+          <div class="section-stack">
+            <div class="panel">
+              <div class="section-toolbar">
+                <div class="section-toolbar__copy">
+                  <h2>Настройки сайта</h2>
+                  <p>Контактные данные, адрес и часы работы.</p>
+                </div>
+              </div>
+              <form id="settings-form">
+                <div id="settings-fields" class="settings-grid"></div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn--primary">Сохранить</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- Медиафайлы -->
         <section id="section-media" class="admin-section">
           <div class="section-stack">
             <div class="panel">
               <div class="section-toolbar">
                 <div class="section-toolbar__copy">
-                  <h2>Медиа-библиотека</h2>
-                  <p>Хранение изображений, копирование путей и повторное использование ассетов в блоках.</p>
+                  <h2>Медиафайлы</h2>
+                  <p>Загруженные фотографии. Нажмите на путь чтобы скопировать.</p>
                 </div>
                 <div>
                   <input type="file" id="media-upload" accept="image/*" multiple hidden>
                   <button class="btn btn--primary" onclick="document.getElementById('media-upload').click()">
-                    Загрузить файлы
+                    + Загрузить файлы
                   </button>
                 </div>
               </div>
 
               <div class="toolbar-grid">
                 <label class="input-shell input-shell--wide">
-                  <span>Поиск по медиатеке</span>
-                  <input type="search" id="media-search" placeholder="Имя файла или путь">
+                  <span>Поиск по названию</span>
+                  <input type="search" id="media-search" placeholder="Имя файла">
                 </label>
               </div>
 
@@ -285,17 +301,17 @@
             </div>
           </div>
         </section>
+
       </main>
     </div>
   </div>
 
+  <!-- Медиапикер (оверлей для выбора фото в блоке) -->
   <div id="media-picker" class="media-picker" hidden>
     <div class="media-picker__backdrop" onclick="app.closeMediaPicker()"></div>
     <div class="media-picker__body">
       <div class="media-picker__header">
-        <div>
-          <h3>Выбрать изображение</h3>
-        </div>
+        <h3>Выбрать фотографию</h3>
         <button class="modal__close" onclick="app.closeMediaPicker()">&times;</button>
       </div>
       <div id="media-picker-grid" class="media-picker__grid"></div>
