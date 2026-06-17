@@ -1016,9 +1016,10 @@
         return;
       }
 
+      toast('Загружаем...', 'info');
       files.forEach(function (file) {
         uploadFile(file).then(function (result) {
-          if (!result.ok) return;
+          if (!result.ok) { toast(result.error || 'Не удалось загрузить фото', 'error'); return; }
 
           api('POST', '/api/collections/' + id + '/images', {
             image_path: result.path,
