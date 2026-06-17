@@ -989,7 +989,6 @@
     document.getElementById('btn-add-collection').addEventListener('click', addNewCollection);
     document.getElementById('collection-form').addEventListener('submit', handleCollectionSubmit);
     document.getElementById('settings-form').addEventListener('submit', handleSettingsSubmit);
-    document.querySelector('.modal__backdrop').addEventListener('click', closeModal);
 
     document.getElementById('collections-search').addEventListener('input', renderCollections);
     document.getElementById('collections-filter').addEventListener('change', renderCollections);
