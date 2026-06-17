@@ -28,11 +28,13 @@ const upload = multer({
   storage,
   limits: { fileSize: 10 * 1024 * 1024 }, // 10MB
   fileFilter: (req, file, cb) => {
-    const allowed = /\.(jpg|jpeg|png|webp|gif|svg|avif)$/i;
-    if (allowed.test(file.originalname)) {
+    const allowed = /\.(jpg|jpeg|png|webp|gif|svg|avif|heic|heif)$/i;
+    const allowedMime = /^image\//;
+    if (allowed.test(file.originalname) || allowedMime.test(file.mimetype)) {
       cb(null, true);
     } else {
-      cb(new Error('Only image files are allowed'));
+      cb(null, false);
+      req.fileRejected = true;
     }
   }
 });
@@ -40,8 +42,14 @@ const upload = multer({
 const router = express.Router();
 
 // Admin: upload file
-router.post('/upload', requireAuth, upload.single('file'), (req, res) => {
-  if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
+router.post('/upload', requireAuth, (req, res, next) => {
+  upload.single('file')(req, res, (err) => {
+    if (err) return res.status(400).json({ error: err.message || 'Ошибка загрузки' });
+    next();
+  });
+}, (req, res) => {
+  if (req.fileRejected) return res.status(400).json({ error: 'Формат файла не поддерживается. Используйте JPG, PNG, WebP.' });
+  if (!req.file) return res.status(400).json({ error: 'Файл не выбран' });
 
   const db = getDb();
   const relativePath = 'data/uploads/' + req.file.filename;

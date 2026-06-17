@@ -77,7 +77,20 @@
       method: 'POST',
       body: formData,
       credentials: 'same-origin'
-    }).then(function (res) { return res.json(); });
+    }).then(function (res) {
+      if (res.status === 401) {
+        toast('Сессия истекла. Войдите заново.', 'error');
+        setTimeout(function () { showLogin(); }, 1500);
+        return { ok: false };
+      }
+      return res.json().catch(function () {
+        toast('Ошибка загрузки файла', 'error');
+        return { ok: false };
+      });
+    }).catch(function () {
+      toast('Ошибка сети при загрузке', 'error');
+      return { ok: false };
+    });
   }
 
   function toast(message, type) {
@@ -672,9 +685,10 @@
   function uploadBlockImage(input, blockIdx, fieldName) {
     var file = input.files[0];
     if (!file) return;
+    toast('Загружаем...', 'info');
 
     uploadFile(file).then(function (result) {
-      if (!result.ok) return;
+      if (!result.ok) { toast(result.error || 'Не удалось загрузить фото', 'error'); return; }
       collectBlocksFromDom();
       if (state.pageBlocks[blockIdx]) state.pageBlocks[blockIdx][fieldName] = result.path;
       renderBlockList();
@@ -685,9 +699,10 @@
   function uploadGridImage(input, blockIdx, imgIdx) {
     var file = input.files[0];
     if (!file) return;
+    toast('Загружаем...', 'info');
 
     uploadFile(file).then(function (result) {
-      if (!result.ok) return;
+      if (!result.ok) { toast(result.error || 'Не удалось загрузить фото', 'error'); return; }
       collectBlocksFromDom();
       if (state.pageBlocks[blockIdx] && state.pageBlocks[blockIdx].images && state.pageBlocks[blockIdx].images[imgIdx]) {
         state.pageBlocks[blockIdx].images[imgIdx].src = result.path;
