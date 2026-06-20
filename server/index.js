@@ -1,4 +1,5 @@
 const express = require('express');
+const compression = require('compression');
 const session = require('express-session');
 const path = require('path');
 const { initDb, seedDefaults } = require('./db');
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 3000;
 // Session store (SQLite-backed)
 const SQLiteStore = require('connect-sqlite3')(session);
 
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -48,7 +50,17 @@ app.use('/admin', express.static(path.join(__dirname, '..', 'admin')));
 // Serve the public site (static files from project root)
 app.use(express.static(path.join(__dirname, '..'), {
   index: 'index.html',
-  extensions: ['html']
+  extensions: ['html'],
+  setHeaders(res, filePath) {
+    if (/\.(css|js|woff2?|ttf|otf)$/.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    } else if (/\.(webp|jpg|jpeg|png|svg|ico)$/.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=2592000');
+    } else if (/\.html$/.test(filePath)) {
+      res.setHeader('Cache-Control', 'no-cache');
+    }
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+  }
 }));
 
 // 404 handler
