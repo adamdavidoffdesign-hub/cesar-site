@@ -7,16 +7,16 @@
     "start": "node server/index.js"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcrypt": "^6.0.0",
     "better-sqlite3": "^11.7.0",
     "compression": "^1.8.1",
     "connect-sqlite3": "^0.9.15",
     "express": "^4.21.1",
     "express-session": "^1.18.1",
     "multer": "^1.4.5-lts.1",
-    "nodemailer": "^8.0.3"
+    "nodemailer": "^9.0.5"
   },
   "devDependencies": {
-    "sharp": "^0.34.5"
+    "sharp": "^0.35.3"
   }
 }
