@@ -57,17 +57,17 @@
       <div class="container contacts-page__inner">
         <div class="contacts-page__lead">
           <div class="contacts-page__intro">
-            <h1 id="contacts-page-title" class="contacts-page__title t-title">Обсудим ваш проект</h1>
-            <p class="contacts-page__subtitle t-body">Запишитесь на консультацию в студию Cesar в Москве.</p>
+            <h1 id="contacts-page-title" class="contacts-page__title t-title" data-i18n="contacts.h1">Обсудим ваш проект</h1>
+            <p class="contacts-page__subtitle t-body" data-i18n="contacts.subtitle">Запишитесь на консультацию в студию Cesar в Москве.</p>
           </div>
 
           <div class="contacts-page__form-col">
             <form class="contacts-page__form" data-mailto-form data-mailto-recipient="INTERIORTODAY@MAIL.RU" data-mailto-subject="Заявка на консультацию Cesar Studio">
-              <input class="contacts-page__input" type="text" name="Имя" placeholder="Имя" aria-label="Имя" required>
+              <input class="contacts-page__input" type="text" name="Имя" data-i18n-placeholder="contacts.form.name" placeholder="Имя" aria-label="Имя" required>
               <input class="contacts-page__input" type="tel" name="Телефон" placeholder="+7 (___) ___-__-__" aria-label="Телефон" required>
               <input class="contacts-page__input" type="email" name="Email" placeholder="Email" aria-label="Email" autocomplete="email" required>
-              <button class="contacts-page__submit about__link t-body" type="submit">Обсудить проект <span class="link-arrow">→</span></button>
-              <p class="contacts-page__privacy t-body">Отправляя запрос, вы соглашаетесь с <a href="/privacy-policy" style="text-decoration: underline;">политикой конфиденциальности</a> и условиями обработки данных.</p>
+              <button class="contacts-page__submit about__link t-body" type="submit"><span data-i18n="contacts.form.submit">Обсудить проект</span> <span class="link-arrow">→</span></button>
+              <p class="contacts-page__privacy t-body" data-i18n-html="contacts.privacy">Отправляя запрос, вы соглашаетесь с <a href="/privacy-policy" style="text-decoration: underline;">политикой конфиденциальности</a> и условиями обработки данных.</p>
             </form>
           </div>
         </div>
@@ -79,12 +79,12 @@
 
           <div class="contacts-page__info">
             <div class="contacts-page__info-group">
-              <p class="contacts-page__info-label t-body">Адрес</p>
-              <p class="contacts-page__info-text t-body">105120, Москва<br>Нижняя Сыромятническая, дом 11, стр. 52</p>
+              <p class="contacts-page__info-label t-body" data-i18n="contacts.address.label">Адрес</p>
+              <p class="contacts-page__info-text t-body" data-i18n-html="contacts.address.text">105120, Москва<br>Нижняя Сыромятническая, дом 11, стр. 52</p>
             </div>
 
             <div class="contacts-page__info-group">
-              <p class="contacts-page__info-label t-body">Телефон</p>
+              <p class="contacts-page__info-label t-body" data-i18n="contacts.phone.label">Телефон</p>
               <p class="contacts-page__info-text t-body"><a href="tel:+74957557055">+7 (495) 755-70-55</a></p>
               <div class="contacts-page__messengers">
                 <a href="https://wa.me/74957557055" class="contacts-page__messenger-link" target="_blank" rel="noopener">WhatsApp</a>
@@ -93,13 +93,13 @@
             </div>
 
             <div class="contacts-page__info-group">
-              <p class="contacts-page__info-label t-body">Email</p>
+              <p class="contacts-page__info-label t-body" data-i18n="contacts.email.label">Email</p>
               <p class="contacts-page__info-text t-body"><a href="mailto:interiortoday@mail.ru">interiortoday@mail.ru</a></p>
             </div>
 
             <div class="contacts-page__info-group">
-              <p class="contacts-page__info-label t-body">График работы</p>
-              <p class="contacts-page__info-text t-body">Пн–Сб: 10:00–19:00</p>
+              <p class="contacts-page__info-label t-body" data-i18n="contacts.hours.label">График работы</p>
+              <p class="contacts-page__info-text t-body" data-i18n="contacts.hours.text">Пн–Сб: 10:00–19:00</p>
             </div>
           </div>
         </div>
@@ -112,6 +112,7 @@
   </footer>
 
   <!-- подключаем javascript -->
+  <script src="js/i18n.js?v=1"></script>
   <script src="js/main.js?v=20"></script>
 
 </body>

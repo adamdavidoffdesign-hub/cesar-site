@@ -9,6 +9,11 @@ var SYSTEMS_DATA_FALLBACK = [
       'Позволяет создавать острова и композиции сложной формы, подстраиваясь под архитектуру пространства.',
       'Акцент на пластичность и игру света.'
     ],
+    descEn: [
+      'Modular system with free geometry.',
+      'Creates islands and complex-form compositions that adapt to the architecture of the space.',
+      'Emphasis on plasticity and the interplay of light.'
+    ],
     images: ['images/tangram/1.webp', 'images/tangram/2.webp', 'images/tangram/3.webp'],
     link: 'collections/tangram.html'
   },
@@ -19,6 +24,11 @@ var SYSTEMS_DATA_FALLBACK = [
       'Строгая и универсальная архитектурная система.',
       'Подходит для индивидуальных проектов и сложных планировок.',
       'Чёткая геометрия и контроль каждой детали.'
+    ],
+    descEn: [
+      'A precise and versatile architectural system.',
+      'Suited for bespoke projects and complex floor plans.',
+      'Clear geometry and control over every detail.'
     ],
     images: ['images/maxima/1.webp', 'images/maxima/2.webp', 'images/maxima/3.webp'],
     link: 'collections/maxima.html'
@@ -31,6 +41,11 @@ var SYSTEMS_DATA_FALLBACK = [
       'Кухня как центр дома, открытая к изменениям и новым сценариям.',
       'Функциональность, технологичность и свобода компоновки.'
     ],
+    descEn: [
+      'A flexible system for the contemporary way of living.',
+      'The kitchen as the heart of the home, open to change and new scenarios.',
+      'Functionality, technology and freedom of configuration.'
+    ],
     images: ['images/unit/1.webp', 'images/unit/3.webp', 'images/unit/4.webp'],
     link: 'collections/unit.html'
   },
@@ -42,6 +57,11 @@ var SYSTEMS_DATA_FALLBACK = [
       'Минималистичная система, где форма, материал и пространство работают вместе.',
       'Для сдержанных интерьеров и спокойного ритма жизни.'
     ],
+    descEn: [
+      'A kitchen about silence and balance.',
+      'A minimalist system where form, material and space work as one.',
+      'For understated interiors and a calm pace of life.'
+    ],
     images: ['images/n-elle/1.webp', 'images/n-elle/2.webp', 'images/n-elle/3.webp'],
     link: 'collections/n-elle.html'
   },
@@ -50,6 +70,9 @@ var SYSTEMS_DATA_FALLBACK = [
     designer: 'Design by Garcia Cumini',
     desc: [
       'Архитектурная система, основанная на работе с плоскостью и материалом. Игра пропорций и текстур формирует выразительный, но сдержанный образ. Для интерьеров, где кухня становится частью общей архитектуры.'
+    ],
+    descEn: [
+      'An architectural system built on the interplay of surfaces and materials. A dialogue of proportions and textures creates an expressive yet restrained aesthetic. For interiors where the kitchen becomes part of the architecture itself.'
     ],
     images: ['images/intarsio/10.webp', 'images/intarsio/11.webp', 'images/intarsio/12.webp'],
     link: 'collections/intarsio.html'
@@ -138,6 +161,9 @@ function initSystems() {
   var template = document.getElementById('system-card-template');
   if (!list || !template || !template.content || !SYSTEMS_DATA.length) return Promise.resolve();
 
+  list.innerHTML = '';
+  var lang = window.I18N ? window.I18N.getLang() : 'ru';
+
   SYSTEMS_DATA.forEach(function (item) {
     var card = template.content.cloneNode(true);
     card.querySelector('.system__name').textContent = item.name;
@@ -145,7 +171,8 @@ function initSystems() {
 
     var descEl = card.querySelector('.system__desc');
     descEl.innerHTML = '';
-    item.desc.forEach(function (p) {
+    var descs = (lang === 'en' && item.descEn) ? item.descEn : item.desc;
+    descs.forEach(function (p) {
       var para = document.createElement('p');
       para.textContent = p;
       descEl.appendChild(para);
@@ -172,6 +199,8 @@ function initSystems() {
     var link = card.querySelector('.system__link');
     link.href = item.link;
     link.removeAttribute('aria-disabled');
+    var linkSpan = link.querySelector('[data-i18n]');
+    if (linkSpan && window.I18N) linkSpan.textContent = window.I18N.t('systems.card.link');
 
     list.appendChild(card);
   });
@@ -231,8 +260,9 @@ function initMailtoForms() {
       if (!form.reportValidity()) return;
 
       var btn = form.querySelector('[type="submit"]');
-      var originalText = btn ? btn.textContent : '';
-      if (btn) { btn.disabled = true; btn.textContent = 'Отправляем...'; }
+      var originalHTML = btn ? btn.innerHTML : '';
+      var t = window.I18N ? window.I18N.t.bind(window.I18N) : function (k) { return k; };
+      if (btn) { btn.disabled = true; btn.textContent = t('toast.sending'); }
 
       var data = {};
       form.querySelectorAll('input, textarea, select').forEach(function (field) {
@@ -249,17 +279,17 @@ function initMailtoForms() {
       .then(function (r) { return r.json(); })
       .then(function (res) {
         if (res.ok) {
-          showFormToast('Заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+          showFormToast(t('toast.success'));
           form.reset();
         } else {
-          showFormToast(res.error || 'Ошибка отправки. Позвоните нам напрямую.', true);
+          showFormToast(res.error || t('toast.error'), true);
         }
       })
       .catch(function () {
-        showFormToast('Ошибка отправки. Позвоните нам напрямую.', true);
+        showFormToast(t('toast.error'), true);
       })
       .finally(function () {
-        if (btn) { btn.disabled = false; btn.textContent = originalText; }
+        if (btn) { btn.disabled = false; btn.innerHTML = originalHTML; }
       });
     });
   });
@@ -662,10 +692,10 @@ function initLightbox() {
   lb.setAttribute('role', 'dialog');
   lb.setAttribute('aria-modal', 'true');
   lb.innerHTML =
-    '<button class="lightbox__prev" aria-label="Предыдущее фото">&#8592;</button>' +
+    '<button class="lightbox__prev" data-i18n-aria="lightbox.prev" aria-label="Предыдущее фото">&#8592;</button>' +
     '<img class="lightbox__img" src="" alt="">' +
-    '<button class="lightbox__next" aria-label="Следующее фото">&#8594;</button>' +
-    '<button class="lightbox__close" aria-label="Закрыть">&#215;</button>';
+    '<button class="lightbox__next" data-i18n-aria="lightbox.next" aria-label="Следующее фото">&#8594;</button>' +
+    '<button class="lightbox__close" data-i18n-aria="lightbox.close" aria-label="Закрыть">&#215;</button>';
   document.body.appendChild(lb);
 
   var img = lb.querySelector('.lightbox__img');
@@ -783,5 +813,10 @@ loadSystemsFromApi().then(function () {
 initMailtoForms();
 initLightbox();
 loadPartials().then(function () {
+  if (window.I18N) window.I18N.apply();
   initRevealAnimations();
+});
+
+document.addEventListener('langchange', function () {
+  initSystems();
 });

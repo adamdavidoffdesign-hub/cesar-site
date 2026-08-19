@@ -1,3 +1,39 @@
+<style>
+  .header__lang {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 24px;
+    flex-shrink: 0;
+  }
+  .header__lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: currentColor;
+    opacity: 0.4;
+    padding: 0;
+    line-height: 1;
+    transition: opacity 0.2s;
+  }
+  .header__lang-btn:hover { opacity: 0.7; }
+  .header__lang-btn.is-active { opacity: 1; }
+  .header__lang-sep {
+    font-size: 10px;
+    opacity: 0.25;
+    line-height: 1;
+    user-select: none;
+  }
+  @media (max-width: 768px) {
+    .header__lang { margin-left: 16px; }
+  }
+</style>
+
 <div class="container menu-nav-bar">
   <div class="menu-nav-bar__stroke">
     <div class="header__inner">
@@ -15,12 +51,19 @@
 
       <!-- десктопное меню -->
       <nav class="header__nav menu-nav-bar__desktop">
-        <a href="/" data-site-path="/">Главная</a>
-        <a href="/about" data-site-path="/about">О студии</a>
-        <a href="/#systems" data-site-path="/#systems">Системы</a>
-        <a href="/#services" data-site-path="/#services">Сервис</a>
-        <a href="/contacts" data-site-path="/contacts">Контакты</a>
+        <a href="/" data-site-path="/"><span data-i18n="nav.home">Главная</span></a>
+        <a href="/about" data-site-path="/about"><span data-i18n="nav.about">О студии</span></a>
+        <a href="/#systems" data-site-path="/#systems"><span data-i18n="nav.systems">Системы</span></a>
+        <a href="/#services" data-site-path="/#services"><span data-i18n="nav.service">Сервис</span></a>
+        <a href="/contacts" data-site-path="/contacts"><span data-i18n="nav.contacts">Контакты</span></a>
       </nav>
+
+      <!-- переключатель языка -->
+      <div class="header__lang">
+        <button class="header__lang-btn" data-lang="ru" aria-label="Русский">RU</button>
+        <span class="header__lang-sep">|</span>
+        <button class="header__lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
 
       <!-- бургер для мобильного -->
       <button class="header__burger menu-nav-bar__burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false">
@@ -35,10 +78,10 @@
 <!-- мобильное меню -->
 <nav class="header__mobile-menu menu-nav-bar__mobile" id="mobile-menu" aria-hidden="true">
   <div class="header__mobile-links">
-    <a href="/" data-site-path="/">Главная</a>
-    <a href="/about" data-site-path="/about">О студии</a>
-    <a href="/#systems" data-site-path="/#systems">Системы</a>
-    <a href="/#services" data-site-path="/#services">Сервис</a>
-    <a href="/contacts" data-site-path="/contacts">Контакты</a>
+    <a href="/" data-site-path="/"><span data-i18n="nav.home">Главная</span></a>
+    <a href="/about" data-site-path="/about"><span data-i18n="nav.about">О студии</span></a>
+    <a href="/#systems" data-site-path="/#systems"><span data-i18n="nav.systems">Системы</span></a>
+    <a href="/#services" data-site-path="/#services"><span data-i18n="nav.service">Сервис</span></a>
+    <a href="/contacts" data-site-path="/contacts"><span data-i18n="nav.contacts">Контакты</span></a>
   </div>
 </nav>
